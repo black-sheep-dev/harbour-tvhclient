@@ -29,7 +29,6 @@ public:
     Q_ENUM(ChannelRoles)
 
     explicit ChannelsModel(QObject *parent = nullptr);
-    ~ChannelsModel() override;
 
     void clear();
     QList<Channel *> channels() const;

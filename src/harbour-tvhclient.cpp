@@ -15,28 +15,30 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationDomain(QStringLiteral("nubecula.org"));
 
 
-    qmlRegisterType<ChannelsModel>("org.nubecula.harbour.tvhclient", 1, 0, "ChannelsModel");
-    qmlRegisterType<ChannelsSortFilterModel>("org.nubecula.harbour.tvhclient", 1, 0, "ChannelsSortFilterModel");
-    qmlRegisterType<Event>("org.nubecula.harbour.tvhclient", 1, 0, "Event");
-    qmlRegisterType<EventsModel>("org.nubecula.harbour.tvhclient", 1, 0, "EventsModel");
-    qmlRegisterType<EventsSortFilterModel>("org.nubecula.harbour.tvhclient", 1, 0, "EventsSortFilterModel");
-    qmlRegisterType<Recording>("org.nubecula.harbour.tvhclient", 1, 0, "Recording");
-    qmlRegisterType<RecordingsModel>("org.nubecula.harbour.tvhclient", 1, 0, "RecordingsModel");
-    qmlRegisterType<RecordingsSortFilterModel>("org.nubecula.harbour.tvhclient", 1, 0, "RecordingsSortFilterModel");
-    qmlRegisterType<ServerInfo>("org.nubecula.harbour.tvhclient", 1, 0, "ServerInfo");
+    auto uri = "org.nubecula.harbour.tvhclient";
 
-    qmlRegisterSingletonType<TVHClient>("org.nubecula.harbour.tvhclient",
-                                              1,
-                                              0,
-                                              "TVHClient",
-                                              [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+    qmlRegisterType<ChannelsModel>(uri, 1, 0, "ChannelsModel");
+    qmlRegisterType<ChannelsSortFilterModel>(uri, 1, 0, "ChannelsSortFilterModel");
+    qmlRegisterType<Event>(uri, 1, 0, "Event");
+    qmlRegisterType<EventsModel>(uri, 1, 0, "EventsModel");
+    qmlRegisterType<EventsSortFilterModel>(uri, 1, 0, "EventsSortFilterModel");
+    qmlRegisterType<Recording>(uri, 1, 0, "Recording");
+    qmlRegisterType<RecordingsModel>(uri, 1, 0, "RecordingsModel");
+    qmlRegisterType<RecordingsSortFilterModel>(uri, 1, 0, "RecordingsSortFilterModel");
+    qmlRegisterType<ServerInfo>(uri, 1, 0, "ServerInfo");
+
+    qmlRegisterSingletonType<TVHClient>(uri,
+                                        1,
+                                        0,
+                                        "TVHClient",
+                                        [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
 
         //Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
 
         engine->addImageProvider(QLatin1String("channel"), new IconProvider);
 
-        auto *client = new TVHClient();
+        auto client = new TVHClient();
 
         return client;
     });

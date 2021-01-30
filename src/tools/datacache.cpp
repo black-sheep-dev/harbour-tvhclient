@@ -1,6 +1,6 @@
 #include "datacache.h"
 
-#define     TVHCLIENT_DATACACHE_DB_VERSION          1
+constexpr int TVHCLIENT_DATACACHE_DB_VERSION = 1;
 
 #ifdef QT_DEBUG
     #include <QDebug>
@@ -74,23 +74,10 @@ void DataCache::updateChannels(const QByteArray data)
     qDebug() << QStringLiteral("Update channels start: ")  << QDateTime::currentDateTime();;
 #endif
 
-    QByteArray uncompressed = Utils::gunzip(data);
 
-    if (uncompressed.isEmpty())
-        uncompressed = data;
+    const QJsonObject json = Utils::parseJson(data);
 
-    QJsonParseError error;
-
-    const QJsonObject json = QJsonDocument::fromJson(uncompressed, &error).object();
-
-    if (error.error) {
-#ifdef QT_DEBUG
-        qDebug() << error.errorString();
-#endif
-        return;
-    }
-
-    const QJsonArray channels = json.value(TVHCLIENT_API_KEY_ENTRIES).toArray();
+    const QJsonArray channels = json.value(ApiKey::entries).toArray();
 
     // reset channels
     resetChannels();
@@ -177,7 +164,7 @@ void DataCache::updateEpg(const QByteArray data, bool now)
         return;
     }
 
-    const QJsonArray entries = json.value(TVHCLIENT_API_KEY_ENTRIES).toArray();
+    const QJsonArray entries = json.value(ApiKey::entries).toArray();
 
     // reset EPG
     if (!now)
@@ -216,27 +203,27 @@ void DataCache::updateEpg(const QByteArray data, bool now)
                                      ":summary,"
                                      ":description)").arg(now ? QStringLiteral("OR REPLACE") : ""));
 
-        query.bindValue(QStringLiteral(":event_id"), entry.value(TVHCLIENT_API_KEY_EVENT_ID).toInt());
-        query.bindValue(QStringLiteral(":episode_id"), entry.value(TVHCLIENT_API_KEY_EPISODE_ID).toInt());
-        query.bindValue(QStringLiteral(":channel_uuid"), entry.value(TVHCLIENT_API_KEY_CHANNEL_UUID).toString());
-        query.bindValue(QStringLiteral(":start"), entry.value(TVHCLIENT_API_KEY_START).toInt());
-        query.bindValue(QStringLiteral(":stop"), entry.value(TVHCLIENT_API_KEY_STOP).toInt());
-        query.bindValue(QStringLiteral(":next_event_id"), entry.value(TVHCLIENT_API_KEY_NEXT_EVENT_ID).toInt());
-        query.bindValue(QStringLiteral(":title"), entry.value(TVHCLIENT_API_KEY_TITLE).toString());
-        query.bindValue(QStringLiteral(":subtitle"), entry.value(TVHCLIENT_API_KEY_SUBTITLE).toString());
-        query.bindValue(QStringLiteral(":summary"), entry.value(TVHCLIENT_API_KEY_SUMMARY).toString());
-        query.bindValue(QStringLiteral(":description"), entry.value(TVHCLIENT_API_KEY_DESCRIPTION).toString());
+        query.bindValue(QStringLiteral(":event_id"), entry.value(ApiKey::eventId).toInt());
+        query.bindValue(QStringLiteral(":episode_id"), entry.value(ApiKey::episodeId).toInt());
+        query.bindValue(QStringLiteral(":channel_uuid"), entry.value(ApiKey::channelUuid).toString());
+        query.bindValue(QStringLiteral(":start"), entry.value(ApiKey::start).toInt());
+        query.bindValue(QStringLiteral(":stop"), entry.value(ApiKey::stop).toInt());
+        query.bindValue(QStringLiteral(":next_event_id"), entry.value(ApiKey::nextEventId).toInt());
+        query.bindValue(QStringLiteral(":title"), entry.value(ApiKey::title).toString());
+        query.bindValue(QStringLiteral(":subtitle"), entry.value(ApiKey::subtitle).toString());
+        query.bindValue(QStringLiteral(":summary"), entry.value(ApiKey::summary).toString());
+        query.bindValue(QStringLiteral(":description"), entry.value(ApiKey::description).toString());
 
         // features
         quint8 features{0};
 
-        if (entry.value(TVHCLIENT_API_KEY_HD).toInt())
+        if (entry.value(ApiKey::hd).toInt())
             features |= Event::FeatureHD;
 
-        if (entry.value(TVHCLIENT_API_KEY_SUBTITLED).toInt())
+        if (entry.value(ApiKey::subtitled).toInt())
             features |= Event::FeatureSubtitled;
 
-        if (entry.value(TVHCLIENT_API_KEY_WIDESCREEN).toInt())
+        if (entry.value(ApiKey::widescreen).toInt())
             features |= Event::FeatureWidescreen;
 
         query.bindValue(QStringLiteral(":features"), features);
@@ -290,15 +277,9 @@ void DataCache::updateRecordings(const QByteArray data)
     qDebug() << QStringLiteral("Update recordings start: ")  << QDateTime::currentDateTime();
 #endif
 
-    QByteArray uncompressed = Utils::gunzip(data);
-
-    if (uncompressed.isEmpty())
-        uncompressed = data;
-
-
     QJsonParseError error;
 
-    const QJsonObject json = QJsonDocument::fromJson(uncompressed, &error).object();
+    const QJsonObject json = Utils::parseJson(data);
 
     if (error.error) {
 #ifdef QT_DEBUG
@@ -307,7 +288,7 @@ void DataCache::updateRecordings(const QByteArray data)
         return;
     }
 
-    const QJsonArray entries = json.value(TVHCLIENT_API_KEY_ENTRIES).toArray();
+    const QJsonArray entries = json.value(ApiKey::entries).toArray();
 
     // reset recordings
     resetRecordings();
@@ -352,11 +333,11 @@ void DataCache::updateRecordings(const QByteArray data)
                                      ":description"
                                      ")"));
 
-        query.bindValue(QStringLiteral(":uuid"), entry.value(TVHCLIENT_API_KEY_UUID).toString());
-        query.bindValue(QStringLiteral(":channel_uuid"), entry.value(TVHCLIENT_API_KEY_CHANNEL).toString());
-        query.bindValue(QStringLiteral(":broadcast"), entry.value(TVHCLIENT_API_KEY_BROADCAST).toInt());
+        query.bindValue(QStringLiteral(":uuid"), entry.value(ApiKey::uuid).toString());
+        query.bindValue(QStringLiteral(":channel_uuid"), entry.value(ApiKey::channel).toString());
+        query.bindValue(QStringLiteral(":broadcast"), entry.value(ApiKey::broadcast).toInt());
 
-        const QString statusStr = entry.value(TVHCLIENT_API_KEY_STATUS).toString();
+        const QString statusStr = entry.value(ApiKey::status).toString();
         quint8 status{0};
 
         if (statusStr == QLatin1String("completed")) {
@@ -370,16 +351,16 @@ void DataCache::updateRecordings(const QByteArray data)
         }
         query.bindValue(QStringLiteral(":status"), status);
 
-        query.bindValue(QStringLiteral(":file_size"), entry.value(TVHCLIENT_API_KEY_FILE_SIZE).toInt());
-        query.bindValue(QStringLiteral(":play_count"), entry.value(TVHCLIENT_API_KEY_PLAY_COUNT).toInt());
-        query.bindValue(QStringLiteral(":play_position"), entry.value(TVHCLIENT_API_KEY_PLAY_POSITION).toInt());
-        query.bindValue(QStringLiteral(":start"), entry.value(TVHCLIENT_API_KEY_START).toInt());
-        query.bindValue(QStringLiteral(":stop"), entry.value(TVHCLIENT_API_KEY_STOP).toInt());
-        query.bindValue(QStringLiteral(":url"), entry.value(TVHCLIENT_API_KEY_URL).toString());
-        query.bindValue(QStringLiteral(":comment"), entry.value(TVHCLIENT_API_KEY_COMMENT).toString());
-        query.bindValue(QStringLiteral(":title"), entry.value(TVHCLIENT_API_KEY_DISPLAY_TITLE).toString());
-        query.bindValue(QStringLiteral(":subtitle"), entry.value(TVHCLIENT_API_KEY_DISPLAY_SUBTITLE).toString());
-        query.bindValue(QStringLiteral(":description"), entry.value(TVHCLIENT_API_KEY_DISPLAY_DESCRIPTION).toString());
+        query.bindValue(QStringLiteral(":file_size"), entry.value(ApiKey::fileSize).toInt());
+        query.bindValue(QStringLiteral(":play_count"), entry.value(ApiKey::playCount).toInt());
+        query.bindValue(QStringLiteral(":play_position"), entry.value(ApiKey::playPosition).toInt());
+        query.bindValue(QStringLiteral(":start"), entry.value(ApiKey::start).toInt());
+        query.bindValue(QStringLiteral(":stop"), entry.value(ApiKey::stop).toInt());
+        query.bindValue(QStringLiteral(":url"), entry.value(ApiKey::url).toString());
+        query.bindValue(QStringLiteral(":comment"), entry.value(ApiKey::comment).toString());
+        query.bindValue(QStringLiteral(":title"), entry.value(ApiKey::displayTitle).toString());
+        query.bindValue(QStringLiteral(":subtitle"), entry.value(ApiKey::displaySubtitle).toString());
+        query.bindValue(QStringLiteral(":description"), entry.value(ApiKey::displayDescription).toString());
 
 
         if (!query.exec()) {

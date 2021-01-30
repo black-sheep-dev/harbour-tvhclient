@@ -8,7 +8,7 @@ EventsSortFilterModel::EventsSortFilterModel(QObject *parent) :
 
 Event *EventsSortFilterModel::getEvent(int idx)
 {
-    EventsModel *model = qobject_cast<EventsModel *>(sourceModel());
+    auto *model = qobject_cast<EventsModel *>(sourceModel());
 
     if (model == nullptr)
         return nullptr;

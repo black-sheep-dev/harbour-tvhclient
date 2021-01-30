@@ -47,6 +47,9 @@ bool ChannelsSortFilterModel::filterAcceptsRow(int source_row, const QModelIndex
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
+    if (!index.isValid())
+        return false;
+
     quint8 found{0}; // bit flag
 
     if (m_showFavoritesOnly) {

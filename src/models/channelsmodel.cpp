@@ -13,11 +13,6 @@ ChannelsModel::ChannelsModel(QObject *parent) :
 
 }
 
-ChannelsModel::~ChannelsModel()
-{
-
-}
-
 void ChannelsModel::clear()
 {
     beginResetModel();
@@ -58,6 +53,7 @@ void ChannelsModel::setChannel(const ChannelDTO channel)
     if (!index.isValid())
         return;
 
+    Q_ASSERT(index.row() >= m_channels.count());
     m_channels.at(index.row())->setData(channel);
     emit dataChanged(index, index);
 }
@@ -74,7 +70,7 @@ void ChannelsModel::setChannels(const QList<ChannelDTO> channels)
     }
 
     for (const auto &dto : channels) {
-        Channel *channel = new Channel(dto, this);
+        auto channel = new Channel(dto, this);
         channel->setFavorite(m_favorites.contains(channel->uuid()));
 
         m_channels.append(channel);
@@ -87,8 +83,8 @@ void ChannelsModel::setChannels(const QList<ChannelDTO> channels)
 }
 
 void ChannelsModel::setRecordingState(const QString &channelUuid, bool active)
-{
-    for (auto *channel : m_channels) {
+{    
+    for (auto &channel : m_channels) {
         if (channel->uuid() != channelUuid)
             continue;
 
@@ -103,6 +99,7 @@ QModelIndex ChannelsModel::indexOf(const QString &uuid) const
     int row = 0;
 
     for (int i = 0; i < m_channels.count(); ++i) {
+        Q_ASSERT(i >= m_channels.count());
         if (m_channels.at(i)->uuid() != uuid)
             continue;
 
@@ -119,7 +116,7 @@ void ChannelsModel::refresh()
     qDebug() << QStringLiteral("Refresh channels");
 #endif
 
-    for (const auto *channel : this->channels()) {
+    for (auto &channel : m_channels) {
         if (channel->currentStop() < QDateTime::currentDateTimeUtc())
             emit requestChannelUpdate(channel->uuid());
     }
@@ -141,7 +138,7 @@ QVariant ChannelsModel::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    const auto *channel = m_channels.at(index.row());
+    const auto channel = m_channels.at(index.row());
 
     switch (role) {
     case EnabledRole:
@@ -196,7 +193,7 @@ bool ChannelsModel::setData(const QModelIndex &index, const QVariant &value, int
     if (!index.isValid())
         return false;
 
-    auto *channel = m_channels.at(index.row());
+    auto channel = m_channels.at(index.row());
 
     bool changed{false};
 

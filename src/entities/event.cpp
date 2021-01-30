@@ -89,8 +89,8 @@ void Event::setData(const EventDTO &dto)
 
 void Event::setChannelUuid(const QString &uuid)
 {
-    if (m_channelUuid == uuid)
-        return;
+    if (m_channelUuid == uuid) {
+        return; }
 
     m_channelUuid = uuid;
     emit channelUuidChanged(m_channelUuid);
@@ -98,8 +98,8 @@ void Event::setChannelUuid(const QString &uuid)
 
 void Event::setDescription(const QString &description)
 {
-    if (m_description == description)
-        return;
+    if (m_description == description) {
+        return; }
 
     m_description = description;
     emit descriptionChanged(m_description);
@@ -107,8 +107,8 @@ void Event::setDescription(const QString &description)
 
 void Event::setEpisodeId(quint32 episodeId)
 {
-    if (m_episodeId == episodeId)
-        return;
+    if (m_episodeId == episodeId) {
+        return; }
 
     m_episodeId = episodeId;
     emit episodeIdChanged(m_episodeId);
@@ -116,8 +116,8 @@ void Event::setEpisodeId(quint32 episodeId)
 
 void Event::setEventId(quint32 eventId)
 {
-    if (m_eventId == eventId)
-        return;
+    if (m_eventId == eventId) {
+        return; }
 
     m_eventId = eventId;
     emit eventIdChanged(m_eventId);
@@ -125,8 +125,8 @@ void Event::setEventId(quint32 eventId)
 
 void Event::setFeatures(quint8 features)
 {
-    if (m_features == features)
-        return;
+    if (m_features == features) {
+        return; }
 
     m_features = features;
     emit featuresChanged(m_features);
@@ -134,8 +134,8 @@ void Event::setFeatures(quint8 features)
 
 void Event::setRecordingUuid(const QString &uuid)
 {
-    if (m_recordingUuid == uuid)
-        return;
+    if (m_recordingUuid == uuid) {
+        return; }
 
     m_recordingUuid = uuid;
     emit recordingUuidChanged(m_recordingUuid);
@@ -145,8 +145,8 @@ void Event::setRecordingUuid(const QString &uuid)
 
 void Event::setScheduled(bool scheduled)
 {
-    if (m_scheduled == scheduled)
-        return;
+    if (m_scheduled == scheduled) {
+        return; }
 
     m_scheduled = scheduled;
     emit scheduledChanged(m_scheduled);
@@ -154,8 +154,8 @@ void Event::setScheduled(bool scheduled)
 
 void Event::setStart(const QDateTime &start)
 {
-    if (m_start == start)
-        return;
+    if (m_start == start) {
+        return; }
 
     m_start = start;
     emit startChanged(m_start);
@@ -163,8 +163,8 @@ void Event::setStart(const QDateTime &start)
 
 void Event::setStop(const QDateTime &stop)
 {
-    if (m_stop == stop)
-        return;
+    if (m_stop == stop) {
+        return; }
 
     m_stop = stop;
     emit stopChanged(m_stop);
@@ -172,8 +172,8 @@ void Event::setStop(const QDateTime &stop)
 
 void Event::setSubtitle(const QString &subtitle)
 {
-    if (m_subtitle == subtitle)
-        return;
+    if (m_subtitle == subtitle) {
+        return; }
 
     m_subtitle = subtitle;
     emit subtitleChanged(m_subtitle);
@@ -181,8 +181,8 @@ void Event::setSubtitle(const QString &subtitle)
 
 void Event::setSummary(const QString &summary)
 {
-    if (m_summary == summary)
-        return;
+    if (m_summary == summary) {
+        return; }
 
     m_summary = summary;
     emit summaryChanged(m_summary);
@@ -190,8 +190,8 @@ void Event::setSummary(const QString &summary)
 
 void Event::setTitle(const QString &title)
 {
-    if (m_title == title)
-        return;
+    if (m_title == title) {
+        return; }
 
     m_title = title;
     emit titleChanged(m_title);

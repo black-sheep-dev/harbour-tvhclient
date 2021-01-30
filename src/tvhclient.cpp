@@ -58,7 +58,7 @@ TVHClient::TVHClient(QObject *parent) :
 
     // get data from cache
     emit requestChannels();
-    emit requestRecordings(); 
+    emit requestRecordings();
 }
 
 TVHClient::~TVHClient()
@@ -88,7 +88,7 @@ void TVHClient::fetchData()
 
 EventsModel *TVHClient::getEventsForChannel(const QString &uuid)
 {
-    EventsModel *model = new EventsModel;
+    auto model = new EventsModel;
     model->setChannelUuid(uuid);
     model->setLoading(true);
     connect(m_cache, &DataCache::eventsAvailable, model, &EventsModel::setChannelEvents, Qt::QueuedConnection);
@@ -124,7 +124,8 @@ void TVHClient::resetIconCache()
 {
     QDir dir(m_iconCachePath);
 
-    for (const auto &info : dir.entryInfoList(QDir::Files)) {
+    const QFileInfoList infos = dir.entryInfoList(QDir::Files);
+    for (const auto &info : infos) {
         QFile::remove(info.absoluteFilePath());
     }
 
@@ -365,7 +366,7 @@ void TVHClient::cacheIcons(const QList<Channel *> &channels)
 
     connect(this, &TVHClient::iconAvailable, m_channelsModel, &ChannelsModel::onIconAvailable);
 
-    for (const auto *channel : channels) {
+    for (const auto &channel : channels) {
         QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/") + channel->icon()));
         reply->setProperty("channel_uuid", channel->uuid());
         reply->setProperty("request", RequestIcon);
@@ -394,19 +395,19 @@ bool TVHClient::hasCachedIcons()
 
 void TVHClient::parseRecordEventResult(const QJsonObject &obj)
 {
-    const QString uuid = obj.value(TVHCLIENT_API_KEY_UUID)
+    const QString uuid = obj.value(ApiKey::uuid)
             .toArray()
             .first()
-            .toString();
+           .toString();
 
     emit eventScheduled(uuid);
 }
 
 void TVHClient::parseServerInfoResult(const QJsonObject &obj)
 {
-    m_serverInfo->setVersion(obj.value(TVHCLIENT_API_KEY_SW_VERSION).toString());
-    m_serverInfo->setApiVersion(obj.value(TVHCLIENT_API_KEY_API_VERSION).toInt());
-    m_serverInfo->setName(obj.value(TVHCLIENT_API_KEY_NAME).toString());
+    m_serverInfo->setVersion(obj.value(ApiKey::swVersion).toString());
+    m_serverInfo->setApiVersion(obj.value(ApiKey::apiVersion).toInt());
+    m_serverInfo->setName(obj.value(ApiKey::name).toString());
     m_serverInfo->setLoading(false);
 }
 

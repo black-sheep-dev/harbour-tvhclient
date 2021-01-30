@@ -28,7 +28,7 @@ void RecordingsModel::setRecordings(const QList<RecordingDTO> recordings)
     }
 
     for (const auto &dto : recordings) {
-        Recording *recording = new Recording(dto, this);
+        auto recording = new Recording(dto, this);
 
         connect(recording, &Recording::activeChanged, this, &RecordingsModel::sendRecordingState);
 
@@ -53,7 +53,7 @@ void RecordingsModel::refresh()
 {
     const QDateTime current = QDateTime::currentDateTimeUtc();
 
-    for (auto *recording : m_recordings) {
+    for (auto &recording : m_recordings) {
         recording->setActive(current > recording->start() && current < recording->stop());
     }
 }
@@ -70,7 +70,7 @@ QVariant RecordingsModel::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    const auto *recording = m_recordings.at(index.row());
+    const auto recording = m_recordings.at(index.row());
 
     switch (role) {
     case ActiveRole:

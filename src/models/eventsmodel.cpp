@@ -51,7 +51,7 @@ void EventsModel::setEvents(const QList<EventDTO> events)
     }
 
     for (const auto &dto : events) {
-        Event *event = new Event(dto, this);
+        auto event = new Event(dto, this);
 
         connect(event, &Event::scheduledChanged, this, &EventsModel::onScheduledChanged);
 
@@ -101,7 +101,7 @@ void EventsModel::refresh()
 {
     int count{0};
 
-    for (const auto *event : m_events) {
+    for (auto &event : m_events) {
         if (event->stop() < QDateTime::currentDateTimeUtc())
             count++;
         else
@@ -130,7 +130,7 @@ QVariant EventsModel::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    const auto *event = m_events.at(index.row());
+    const auto event = m_events.at(index.row());
 
     switch (role) {
     case ChannelUuidRole:

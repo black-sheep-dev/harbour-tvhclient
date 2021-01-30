@@ -11,10 +11,10 @@ ChannelDTO Utils::channelFromJson(const QJsonObject &obj)
 {
     ChannelDTO channel;
 
-    channel.icon = obj.value(TVHCLIENT_API_KEY_ICON_PUBLIC_URL).toString();
-    channel.name = obj.value(TVHCLIENT_API_KEY_NAME).toString();
-    channel.number = obj.value(TVHCLIENT_API_KEY_NUMBER).toInt();
-    channel.uuid = obj.value(TVHCLIENT_API_KEY_UUID).toString();
+    channel.icon = obj.value(ApiKey::iconPublicUrl).toString();
+    channel.name = obj.value(ApiKey::name).toString();
+    channel.number = obj.value(ApiKey::number).toInt();
+    channel.uuid = obj.value(ApiKey::uuid).toString();
 
     return channel;
 }

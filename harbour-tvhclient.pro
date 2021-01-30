@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # VERSION
-VERSION = 0.1.0
+VERSION = 0.1.1
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -24,6 +24,7 @@ LIBS += -lz
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-tvhclient.cpp \
+    src/api/api_keys.cpp \
     src/entities/channel.cpp \
     src/entities/event.cpp \
     src/entities/recording.cpp \
