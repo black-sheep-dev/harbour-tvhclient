@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # VERSION
-VERSION = 0.1.1
+VERSION = 0.1.3
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -54,6 +54,7 @@ DISTFILES += qml/harbour-tvhclient.qml \
     qml/pages/SettingsConnectionPage.qml \
     qml/pages/SettingsPage.qml \
     qml/pages/StreamPlayerPage.qml \
+    qml/pages/WizardAuthenticationPage.qml \
     qml/pages/WizardConnectionPage.qml \
     qml/pages/WizardStartPage.qml \
     qml/pages/WizardStatusPage.qml \
