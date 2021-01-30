@@ -9,7 +9,7 @@ Name:       harbour-tvhclient
 # << macros
 
 Summary:    TVHeadend Client
-Version:    0.1.1
+Version:    0.1.2
 Release:    1
 Group:      Qt/Qt
 License:    MIT

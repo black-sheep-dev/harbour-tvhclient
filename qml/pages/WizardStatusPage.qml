@@ -67,6 +67,7 @@ Dialog {
     onAccepted: {
         pageStack.clear()
         pageStack.push(Qt.resolvedUrl("ChannelsListPage.qml"))
+        TVHClient.saveSettings()
     }
 
     onStatusChanged: if (status === PageStatus.Activating) TVHClient.getServerInfo()

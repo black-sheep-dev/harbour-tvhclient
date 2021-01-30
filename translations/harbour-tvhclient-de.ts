@@ -294,6 +294,18 @@
         <source>Valid port required!</source>
         <translation>Gültiger Port benötigt!</translation>
     </message>
+    <message>
+        <source>Authentication</source>
+        <translation>Authentifizierung</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -324,6 +336,45 @@
     <message>
         <source>Manage server connection settings</source>
         <translation>Verwalte die Server Verbindungs Einstellungen</translation>
+    </message>
+</context>
+<context>
+    <name>WizardAuthenticationPage</name>
+    <message>
+        <source>Authentication Settings</source>
+        <translation>Authentifizierungs Einstellungen</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Authentication</source>
+        <translation>Authentifizierung</translation>
+    </message>
+    <message>
+        <source>Use below credentials to authenticate on TVHeadend server</source>
+        <translation>Benutze die unteren Anmeldeinformation um sich am TVHeadend server anzumelden</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>Enter username</source>
+        <translation>Benutzername eingeben</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Enter password</source>
+        <translation>Passwort eingeben</translation>
     </message>
 </context>
 <context>

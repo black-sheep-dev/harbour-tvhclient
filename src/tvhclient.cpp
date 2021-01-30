@@ -28,6 +28,9 @@ TVHClient::TVHClient(QObject *parent) :
     // read settings
     readSettings();
 
+    // update base url
+    updateBaseUrl();
+
     // get server info
     getServerInfo();
 
@@ -205,6 +208,11 @@ QString TVHClient::hostname() const
     return m_hostname;
 }
 
+QString TVHClient::password() const
+{
+    return m_password;
+}
+
 quint16 TVHClient::port() const
 {
     return m_port;
@@ -220,6 +228,11 @@ quint16 TVHClient::states() const
     return m_states;
 }
 
+QString TVHClient::username() const
+{
+    return m_username;
+}
+
 void TVHClient::setHostname(const QString &hostname)
 {
     if (m_hostname == hostname)
@@ -230,6 +243,18 @@ void TVHClient::setHostname(const QString &hostname)
         m_hostname.prepend(QStringLiteral("http://"));
 
     emit hostnameChanged(m_hostname);
+    updateBaseUrl();
+}
+
+void TVHClient::setPassword(const QString &password)
+{
+    if (m_password == password)
+        return;
+
+    m_password = password;
+    emit passwordChanged(m_password);
+
+    updateBaseUrl();
 }
 
 void TVHClient::setPort(quint16 port)
@@ -239,6 +264,8 @@ void TVHClient::setPort(quint16 port)
 
     m_port = port;
     emit portChanged(m_port);
+
+    updateBaseUrl();
 }
 
 void TVHClient::setShowFavoritesOnly(bool showFavoritesOnly)
@@ -257,6 +284,16 @@ void TVHClient::setStates(quint16 states)
 
     m_states = states;
     emit statesChanged(m_states);
+}
+
+void TVHClient::setUsername(const QString &username)
+{
+    if (m_username == username)
+        return;
+
+    m_username = username;
+    emit usernameChanged(m_username);
+    updateBaseUrl();
 }
 
 void TVHClient::onIconAvailable(QNetworkReply *reply)
@@ -375,11 +412,7 @@ void TVHClient::cacheIcons(const QList<Channel *> &channels)
 
 QNetworkRequest TVHClient::getRequest(const QString &endpoint)
 {
-    const QString url = QString("%1:%2%3").arg(m_hostname,
-                                               QString::number(m_port),
-                                               endpoint);
-
-    QNetworkRequest request(url);
+    QNetworkRequest request(m_baseUrl + endpoint);
     request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
     request.setRawHeader("Accept", "application/json");
     request.setRawHeader("Accept-Encoding", "gzip");
@@ -391,6 +424,11 @@ bool TVHClient::hasCachedIcons()
 {
     return QDir(m_iconCachePath)
             .entryInfoList(QDir::NoDotAndDotDot|QDir::AllEntries).count() != 0;
+}
+
+bool TVHClient::hasCredentials()
+{
+    return !m_username.isEmpty() && !m_password.isEmpty();
 }
 
 void TVHClient::parseRecordEventResult(const QJsonObject &obj)
@@ -411,6 +449,16 @@ void TVHClient::parseServerInfoResult(const QJsonObject &obj)
     m_serverInfo->setLoading(false);
 }
 
+void TVHClient::updateBaseUrl()
+{
+    m_baseUrl = QString("%1:%2").arg(m_hostname,
+                                     QString::number(m_port));
+
+    if (hasCredentials())
+        m_baseUrl.insert(m_baseUrl.indexOf("://") + 3,
+                         QString("%1:%2@").arg(m_username, m_password));
+}
+
 void TVHClient::readSettings()
 {
     QSettings settings;
@@ -418,6 +466,8 @@ void TVHClient::readSettings()
     settings.beginGroup(QStringLiteral("APP"));
     m_hostname = settings.value(QStringLiteral("hostname"), QString()).toString();
     m_port = settings.value(QStringLiteral("port"), 9981).toInt();
+    m_username = settings.value(QStringLiteral("username")).toString();
+    m_password = settings.value(QStringLiteral("password")).toString();
     m_channelsModel->setFavorites(settings.value(QStringLiteral("favorites")).toStringList());
     m_showFavoritesOnly = settings.value(QStringLiteral("showFavoritesOnly"), false).toBool();
     settings.endGroup();
@@ -430,6 +480,8 @@ void TVHClient::writeSettings()
     settings.beginGroup(QStringLiteral("APP"));
     settings.setValue(QStringLiteral("hostname"), m_hostname);
     settings.setValue(QStringLiteral("port"), m_port);
+    settings.setValue(QStringLiteral("username"), m_username);
+    settings.setValue(QStringLiteral("password"), m_password);
     settings.setValue(QStringLiteral("favorites"), m_channelsModel->favorites());
     settings.setValue(QStringLiteral("showFavoritesOnly"), m_showFavoritesOnly);
     settings.endGroup();

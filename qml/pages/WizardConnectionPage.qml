@@ -8,7 +8,7 @@ Dialog {
 
     canAccept: hostnameField.acceptableInput && portField.acceptableInput
 
-    acceptDestination: Qt.resolvedUrl("WizardStatusPage.qml")
+    acceptDestination: Qt.resolvedUrl("WizardAuthenticationPage.qml")
 
     Column {
         width: parent.width
