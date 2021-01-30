@@ -18,6 +18,13 @@
 #include "api/api_keys.h"
 #include "tools/utils.h"
 
+const QString Settings::hostname                = QStringLiteral("hostname");
+const QString Settings::favorites               = QStringLiteral("favorites");
+const QString Settings::password                = QStringLiteral("password");
+const QString Settings::port                    = QStringLiteral("port");
+const QString Settings::showFavoritesOnly       = QStringLiteral("showFavoritesOnly");
+const QString Settings::username                = QStringLiteral("username");
+
 TVHClient::TVHClient(QObject *parent) :
     QObject(parent),
     m_iconCachePath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QStringLiteral("/icons/"))
@@ -116,6 +123,13 @@ RecordingsModel *TVHClient::recordingsModel()
     return m_recordingsModel;
 }
 
+void TVHClient::resetAuthentication()
+{
+    setUsername(QString());
+    setPassword(QString());
+    m_wallet->removeCollection();
+}
+
 void TVHClient::resetCache()
 {
     getChannels();
@@ -133,6 +147,13 @@ void TVHClient::resetIconCache()
     }
 
     cacheIcons(m_channelsModel->channels());
+}
+
+void TVHClient::saveAuthentication()
+{
+    m_wallet->removeCollection();
+    m_wallet->storeData(Settings::username, m_username.toUtf8());
+    m_wallet->storeData(Settings::password, m_password.toUtf8());
 }
 
 ServerInfo *TVHClient::serverInfo()
@@ -464,13 +485,25 @@ void TVHClient::readSettings()
     QSettings settings;
 
     settings.beginGroup(QStringLiteral("APP"));
-    m_hostname = settings.value(QStringLiteral("hostname"), QString()).toString();
-    m_port = settings.value(QStringLiteral("port"), 9981).toInt();
-    m_username = settings.value(QStringLiteral("username")).toString();
-    m_password = settings.value(QStringLiteral("password")).toString();
-    m_channelsModel->setFavorites(settings.value(QStringLiteral("favorites")).toStringList());
-    m_showFavoritesOnly = settings.value(QStringLiteral("showFavoritesOnly"), false).toBool();
+    m_hostname = settings.value(Settings::hostname, QString()).toString();
+    m_port = settings.value(Settings::port, 9981).toInt();
+    m_channelsModel->setFavorites(settings.value(Settings::favorites).toStringList());
+    m_showFavoritesOnly = settings.value(Settings::showFavoritesOnly, false).toBool();
+
+    // support for older version < 0.1.4
+    m_username = settings.value(Settings::username).toString();
+    m_password = settings.value(Settings::password).toString();
     settings.endGroup();
+
+    if (m_username.isEmpty())
+        m_username = QString::fromUtf8(m_wallet->data(Settings::username));
+    else
+        m_wallet->storeData(Settings::username, m_username.toUtf8());
+
+    if (m_password.isEmpty())
+        m_password = QString::fromUtf8(m_wallet->data(Settings::password));
+    else
+        m_wallet->storeData(Settings::password, m_username.toUtf8());
 }
 
 void TVHClient::writeSettings()
@@ -478,11 +511,16 @@ void TVHClient::writeSettings()
     QSettings settings;
 
     settings.beginGroup(QStringLiteral("APP"));
-    settings.setValue(QStringLiteral("hostname"), m_hostname);
-    settings.setValue(QStringLiteral("port"), m_port);
-    settings.setValue(QStringLiteral("username"), m_username);
-    settings.setValue(QStringLiteral("password"), m_password);
-    settings.setValue(QStringLiteral("favorites"), m_channelsModel->favorites());
-    settings.setValue(QStringLiteral("showFavoritesOnly"), m_showFavoritesOnly);
+    settings.setValue(Settings::hostname, m_hostname);
+    settings.setValue(Settings::port, m_port);
+    settings.setValue(Settings::favorites, m_channelsModel->favorites());
+    settings.setValue(Settings::showFavoritesOnly, m_showFavoritesOnly);
+
+    // support for older version < 0.1.4
+    if (settings.allKeys().contains(Settings::username))
+        settings.remove(Settings::username);
+
+    if (settings.allKeys().contains(Settings::password))
+        settings.remove(Settings::password);
     settings.endGroup();
 }

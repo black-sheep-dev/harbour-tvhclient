@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # VERSION
-VERSION = 0.1.3
+VERSION = 0.1.4
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -22,6 +22,9 @@ QT += multimedia sql
 LIBS += -lz
 
 CONFIG += sailfishapp
+
+PKGCONFIG += \
+    sailfishsecrets
 
 SOURCES += src/harbour-tvhclient.cpp \
     src/api/api_keys.cpp \
@@ -38,6 +41,7 @@ SOURCES += src/harbour-tvhclient.cpp \
     src/models/recordingssortfiltermodel.cpp \
     src/tools/datacache.cpp \
     src/tools/iconprovider.cpp \
+    src/tools/secretwallet.cpp \
     src/tools/utils.cpp \
     src/tvhclient.cpp
 
@@ -50,6 +54,7 @@ DISTFILES += qml/harbour-tvhclient.qml \
     qml/pages/EventsListPage.qml \
     qml/pages/RecordingsListPage.qml \
     qml/pages/RecordingsPage.qml \
+    qml/pages/SettingsAuthenticationPage.qml \
     qml/pages/SettingsCachesPage.qml \
     qml/pages/SettingsConnectionPage.qml \
     qml/pages/SettingsPage.qml \
@@ -95,5 +100,6 @@ HEADERS += \
     src/models/recordingssortfiltermodel.h \
     src/tools/datacache.h \
     src/tools/iconprovider.h \
+    src/tools/secretwallet.h \
     src/tools/utils.h \
     src/tvhclient.h

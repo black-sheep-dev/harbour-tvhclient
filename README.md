@@ -23,7 +23,7 @@ Here is a list of all implemented features so far. Not all features listed below
 - Video Stream Player for channels and recordings (depends on the installed codecs of gstreamer)
 - Manage recordings (schedule / stop / cancel / delete)
 - Data cache for offline mode
-- User authentication
+- User authentication (stored with Sailfish Secrets)
 
 
 ## Planned Features

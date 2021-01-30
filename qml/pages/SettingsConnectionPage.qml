@@ -77,26 +77,6 @@ Page {
                 color: Theme.errorColor
                 font.pixelSize: Theme.fontSizeExtraSmall
             }
-
-            SectionHeader {
-                text: qsTr("Authentication")
-            }
-
-            TextField {
-                id: usernameField
-                width: parent.width
-
-                label: qsTr("Username")
-
-                text: TVHClient.username
-            }
-
-            PasswordField {
-                id: passwordField
-                width: parent.width
-
-                label: qsTr("Password")
-            }
         }
     }
     onStatusChanged: {
@@ -105,11 +85,6 @@ Page {
             if (hostnameField.acceptableInput && portField.acceptableInput) {
                 TVHClient.hostname = hostnameField.text
                 TVHClient.port = portField.text
-                TVHClient.username = usernameField.text
-
-                if (passwordField.text.length > 0)
-                    TVHClient.password = passwordField.text
-
                 TVHClient.saveSettings()
             }
         }

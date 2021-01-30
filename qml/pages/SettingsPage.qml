@@ -16,6 +16,12 @@ Page {
                 page: "SettingsConnectionPage.qml"
             }
             ListElement {
+                title: qsTr("Authentication");
+                description: qsTr("Manage authentication settings")
+                icon: "image://theme/icon-m-keys"
+                page: "SettingsAuthenticationPage.qml"
+            }
+            ListElement {
                 title: qsTr("Caches");
                 description: qsTr("Manage application caches")
                 icon: "image://theme/icon-m-sd-card"

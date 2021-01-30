@@ -233,6 +233,25 @@
     </message>
 </context>
 <context>
+    <name>SettingsAuthenticationPage</name>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authentication Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsCachesPage</name>
     <message>
         <source>Cache Settings</source>
@@ -293,18 +312,6 @@
         <source>Valid port required!</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Authentication</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -334,6 +341,14 @@
     </message>
     <message>
         <source>Manage server connection settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authentication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage authentication settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
