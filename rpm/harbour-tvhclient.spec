@@ -10,7 +10,7 @@ Name:       harbour-tvhclient
 
 Summary:    TVHeadend Client
 Version:    0.1.3
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    MIT
 URL:        https://github.com/black-sheep-dev/harbour-tvhclient
