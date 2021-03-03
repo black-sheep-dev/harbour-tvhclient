@@ -36,7 +36,9 @@ Here is a list of all implemented features so far. Not all features listed below
 - English
 - German  
   
-If you missing your native language you are welcome to support this project with your translation.
+Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server:
+
+[https://weblate.nubecula.org/projects/harbour-tvhclient/](https://weblate.nubecula.org/projects/harbour-tvhclient/)
 
 ## Intention of this project
 
