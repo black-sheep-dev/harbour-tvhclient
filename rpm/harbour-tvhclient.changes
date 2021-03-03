@@ -1,3 +1,6 @@
+* Wed Mar 03 2021 Black Sheep <blacksheep@nubecula.org> 0.1.5-1
+- Add translation information with self hosted Weblate server
+
 * Sat Jan 30 2021 Black Sheep <blacksheep@nubecula.org> 0.1.4-1
 - Use Sailfish Secrets to store credentials
 

@@ -42,6 +42,11 @@ If you missing your native language you are welcome to support this project with
 
 This app is part of my plan to replace all android apps I use with native ones. If they don't exist, I will try to create one.
 
+
 ## Donations
 
-If you like my work, you can buy me a beer! [Buy](https://www.paypal.com/paypalme/nubecula/1)
+If you like my work, you can buy me a beer! 
+
+[PayPal](https://www.paypal.com/paypalme/nubecula/1)
+
+[Liberapay](https://liberapay.com/black-sheep-dev/donate)
