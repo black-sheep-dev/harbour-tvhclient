@@ -38,7 +38,7 @@ Here is a list of all implemented features so far. Not all features listed below
   
 Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server:
 
-[https://weblate.nubecula.org/projects/harbour-tvhclient/](https://weblate.nubecula.org/projects/harbour-tvhclient/)
+[![https://weblate.nubecula.org/engage/harbour-tvhclient/](https://weblate.nubecula.org/widgets/harbour-tvhclient/-/multi-auto.svg)](https://weblate.nubecula.org/engage/harbour-tvhclient/)
 
 ## Intention of this project
 
