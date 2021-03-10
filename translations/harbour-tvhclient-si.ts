@@ -5,7 +5,7 @@
     <name>AboutPage</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>පිළිබඳව</translation>
     </message>
     <message>
         <source>TVH Client</source>
@@ -21,11 +21,11 @@
     </message>
     <message>
         <source>Donations</source>
-        <translation type="unfinished"></translation>
+        <translation>පරිත්‍යාග</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>පරිවර්තන</translation>
     </message>
     <message>
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
@@ -37,70 +37,70 @@
     </message>
     <message>
         <source>Donate with PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation>පේපෑල් සමඟ පරිත්‍යාග කරන්න</translation>
     </message>
     <message>
         <source>Donate with Liberpay</source>
-        <translation type="unfinished"></translation>
+        <translation>ලිබර්පේ සමඟ පරිත්‍යාග කරන්න</translation>
     </message>
 </context>
 <context>
     <name>ChannelsListPage</name>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>නාළිකා</translation>
     </message>
     <message>
         <source>No channels available</source>
-        <translation type="unfinished"></translation>
+        <translation>නාලිකා නොමැත</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රියතමයන්ගෙන් ඉවත් කරන්න</translation>
     </message>
     <message>
         <source>Add to favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රියතමයන්ට එකතු කරන්න</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation type="unfinished"></translation>
+        <translation>සියල්ල පෙන්වන්න</translation>
     </message>
     <message>
         <source>Show favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රියතමයන් පෙන්වන්න</translation>
     </message>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished"></translation>
+        <translation>සෙවීම සඟවන්න</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>සොයන්න</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>සැකසුම්</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>ධාවනය</translation>
     </message>
     <message>
         <source>No favorite channels</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රියතම නාලිකා නොමැත</translation>
     </message>
     <message>
         <source>Add favorite channels first</source>
-        <translation type="unfinished"></translation>
+        <translation>පළමුව ප්‍රියතම නාලිකා එකතු කරන්න</translation>
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished"></translation>
+        <translation>පටිගත කිරීම්</translation>
     </message>
 </context>
 <context>
@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>සොයන්න</translation>
     </message>
     <message>
         <source>No events available</source>
@@ -174,7 +174,7 @@
     <name>RecordingsListPage</name>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>ධාවනය</translation>
     </message>
     <message>
         <source>No recordings available</source>
@@ -182,11 +182,11 @@
     </message>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished"></translation>
+        <translation>සෙවීම සඟවන්න</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>සොයන්න</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,11 +210,11 @@
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>නවත්වන්න</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation>පටිගතවීම නවත්වන්න</translation>
     </message>
 </context>
 <context>
@@ -229,7 +229,7 @@
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>අවසන්</translation>
     </message>
     <message>
         <source>Show finished recordings</source>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <source>Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>අසාර්ථකයි</translation>
     </message>
     <message>
         <source>Show failed recordings</source>
