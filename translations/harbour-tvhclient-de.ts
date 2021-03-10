@@ -334,7 +334,7 @@
     <name>SettingsPage</name>
     <message>
         <source>Caches</source>
-        <translation>Caches</translation>
+        <translation>Zwischenspeicher</translation>
     </message>
     <message>
         <source>Manage application caches</source>
