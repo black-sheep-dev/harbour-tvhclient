@@ -80,7 +80,7 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <source>Play</source>
@@ -252,15 +252,15 @@
     <name>SettingsAuthenticationPage</name>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset</translation>
     </message>
     <message>
         <source>Authentication Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia uwierzytelniania</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa użytkownika</translation>
     </message>
     <message>
         <source>Password</source>
@@ -279,7 +279,7 @@
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset</translation>
     </message>
     <message>
         <source>Icon Cache</source>
@@ -310,7 +310,7 @@
     </message>
     <message>
         <source>Hostname</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa hosta</translation>
     </message>
     <message>
         <source>Enter hostname</source>
@@ -361,7 +361,7 @@
     </message>
     <message>
         <source>Authentication</source>
-        <translation type="unfinished"></translation>
+        <translation>Uwierzytelnianie</translation>
     </message>
     <message>
         <source>Manage authentication settings</source>
@@ -372,19 +372,19 @@
     <name>WizardAuthenticationPage</name>
     <message>
         <source>Authentication Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia uwierzytelniania</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstecz</translation>
     </message>
     <message>
         <source>Authentication</source>
-        <translation type="unfinished"></translation>
+        <translation>Uwierzytelnianie</translation>
     </message>
     <message>
         <source>Use below credentials to authenticate on TVHeadend server</source>
@@ -400,7 +400,7 @@
     </message>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasło</translation>
     </message>
     <message>
         <source>Enter password</source>
@@ -415,11 +415,11 @@
     </message>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstecz</translation>
     </message>
     <message>
         <source>Hostname</source>
@@ -446,7 +446,7 @@
     <name>WizardStartPage</name>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Setup Wizard</source>
@@ -458,7 +458,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>This wizard guides you through the necessary steps to establish a connection with a TVHeadend server.</source>
@@ -473,7 +473,7 @@
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstecz</translation>
     </message>
     <message>
         <source>Server Name</source>
