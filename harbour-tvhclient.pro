@@ -83,7 +83,9 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-tvhclient-de.ts \
     translations/harbour-tvhclient-pl.ts \
     translations/harbour-tvhclient-si.ts \
-    translations/harbour-tvhclient-sv.ts
+    translations/harbour-tvhclient-sv.ts \
+    translations/harbour-tvhclient-sk.ts \
+    translations/harbour-tvhclient-fr.ts
 
 RESOURCES += \
     ressources.qrc
