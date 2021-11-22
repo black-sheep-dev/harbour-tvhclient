@@ -109,6 +109,7 @@
         <source>%n min(s) left</source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -120,7 +121,7 @@
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පටිගතවීම නවත්වන්න</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
@@ -151,7 +152,7 @@
     <name>EventsListPage</name>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">සෙවීම සඟවන්න</translation>
     </message>
     <message>
         <source>Search</source>
@@ -163,7 +164,7 @@
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
@@ -237,7 +238,7 @@
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පටිගත කිරීම්</translation>
     </message>
     <message>
         <source>Failed</source>
@@ -341,7 +342,7 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පිළිබඳව</translation>
     </message>
     <message>
         <source>Show app informations</source>
@@ -349,7 +350,7 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">සැකසුම්</translation>
     </message>
     <message>
         <source>Connection</source>
