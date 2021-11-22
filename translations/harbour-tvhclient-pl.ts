@@ -52,7 +52,7 @@
     </message>
     <message>
         <source>No channels available</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak dostępnych etykiet</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
