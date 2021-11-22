@@ -5,7 +5,7 @@
     <name>AboutPage</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <source>TVH Client</source>
@@ -17,31 +17,31 @@
     </message>
     <message>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Sources</translation>
     </message>
     <message>
         <source>Donations</source>
-        <translation type="unfinished"></translation>
+        <translation>Dons</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Traductions</translation>
     </message>
     <message>
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre langue n&apos;est pas disponible&#xa0;? Votre aide est la bienvenue pour traduire ce projet sur mon serveur Weblate dédié.</translation>
     </message>
     <message>
         <source>If you like my work why not buy me a beer?</source>
-        <translation type="unfinished"></translation>
+        <translation>Si vous appréciez mon travail pourquoi ne pas m&apos;offrir une bière&#xa0;?</translation>
     </message>
     <message>
         <source>Donate with PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation>Donner par PayPal</translation>
     </message>
     <message>
         <source>Donate with Liberpay</source>
-        <translation type="unfinished"></translation>
+        <translation>Donner par Liberpay</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     </message>
     <message>
         <source>No channels available</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune étiquette disponible</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
@@ -76,11 +76,11 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechercher</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Play</source>
@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechercher</translation>
     </message>
     <message>
         <source>No events available</source>
@@ -186,15 +186,15 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechercher</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Rafraîchir</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -252,11 +252,11 @@
     <name>SettingsAuthenticationPage</name>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Réinitialiser</translation>
     </message>
     <message>
         <source>Authentication Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres d&apos;authentification</translation>
     </message>
     <message>
         <source>Username</source>
@@ -279,7 +279,7 @@
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Réinitialiser</translation>
     </message>
     <message>
         <source>Icon Cache</source>
@@ -341,7 +341,7 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <source>Show app informations</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Connection</source>
@@ -361,7 +361,7 @@
     </message>
     <message>
         <source>Authentication</source>
-        <translation type="unfinished"></translation>
+        <translation>Authentification</translation>
     </message>
     <message>
         <source>Manage authentication settings</source>
@@ -372,19 +372,19 @@
     <name>WizardAuthenticationPage</name>
     <message>
         <source>Authentication Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres d&apos;authentification</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuer</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour</translation>
     </message>
     <message>
         <source>Authentication</source>
-        <translation type="unfinished"></translation>
+        <translation>Authentification</translation>
     </message>
     <message>
         <source>Use below credentials to authenticate on TVHeadend server</source>
@@ -415,11 +415,11 @@
     </message>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuer</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour</translation>
     </message>
     <message>
         <source>Hostname</source>
@@ -446,7 +446,7 @@
     <name>WizardStartPage</name>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuer</translation>
     </message>
     <message>
         <source>Setup Wizard</source>
@@ -458,7 +458,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermer</translation>
     </message>
     <message>
         <source>This wizard guides you through the necessary steps to establish a connection with a TVHeadend server.</source>
@@ -473,7 +473,7 @@
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour</translation>
     </message>
     <message>
         <source>Server Name</source>
