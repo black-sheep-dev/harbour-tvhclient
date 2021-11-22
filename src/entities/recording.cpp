@@ -22,22 +22,22 @@ quint32 Recording::broadcast() const
     return m_broadcast;
 }
 
-QString Recording::channelName() const
+const QString &Recording::channelName() const
 {
     return m_channelName;
 }
 
-QString Recording::channelUuid() const
+const QString &Recording::channelUuid() const
 {
     return m_channelUuid;
 }
 
-QString Recording::comment() const
+const QString &Recording::comment() const
 {
     return m_comment;
 }
 
-QString Recording::description() const
+const QString &Recording::description() const
 {
     return m_description;
 }
@@ -57,12 +57,12 @@ quint32 Recording::playPosition() const
     return m_playPosition;
 }
 
-QDateTime Recording::start() const
+const QDateTime &Recording::start() const
 {
     return m_start;
 }
 
-QDateTime Recording::stop() const
+const QDateTime &Recording::stop() const
 {
     return m_stop;
 }
@@ -72,22 +72,22 @@ quint16 Recording::status() const
     return m_status;
 }
 
-QString Recording::subtitle() const
+const QString &Recording::subtitle() const
 {
     return m_subtitle;
 }
 
-QString Recording::title() const
+const QString &Recording::title() const
 {
     return m_title;
 }
 
-QString Recording::url() const
+const QString &Recording::url() const
 {
     return m_url;
 }
 
-QString Recording::uuid() const
+const QString &Recording::uuid() const
 {
     return m_uuid;
 }

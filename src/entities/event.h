@@ -68,18 +68,18 @@ public:
     Event(const EventDTO &dto, QObject *parent = nullptr);
 
     // properties
-    QString channelUuid() const;
-    QString description() const;
+    const QString &channelUuid() const;
+    const QString &description() const;
     quint32 episodeId() const;
     quint32 eventId() const;
     quint8 features() const;
-    QString recordingUuid() const;
+    const QString &recordingUuid() const;
     bool scheduled() const;
-    QDateTime start() const;
-    QDateTime stop() const;
-    QString subtitle() const;
-    QString summary() const;
-    QString title() const;
+    const QDateTime &start() const;
+    const QDateTime &stop() const;
+    const QString &subtitle() const;
+    const QString &summary() const;
+    const QString &title() const;
 
 signals:
     // properties

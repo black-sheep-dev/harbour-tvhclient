@@ -19,8 +19,8 @@ public:
     quint8 apiVersion() const;
     bool available() const;
     bool loading() const;
-    QString name() const;
-    QString version() const;
+    const QString &name() const;
+    const QString &version() const;
 
 signals:
     void apiVersionChanged(quint8 version);

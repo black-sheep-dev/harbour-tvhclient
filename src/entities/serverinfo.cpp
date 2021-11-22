@@ -21,12 +21,12 @@ bool ServerInfo::loading() const
     return m_loading;
 }
 
-QString ServerInfo::name() const
+const QString &ServerInfo::name() const
 {
     return m_name;
 }
 
-QString ServerInfo::version() const
+const QString &ServerInfo::version() const
 {
     return m_version;
 }

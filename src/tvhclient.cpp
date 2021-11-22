@@ -79,7 +79,7 @@ TVHClient::~TVHClient()
     m_backgroundThread->wait();
 }
 
-QString TVHClient::baseUrl() const
+const QString &TVHClient::baseUrl() const
 {
     return QString("http://%1:%2").arg(m_hostname, QString::number(m_port));
 }
@@ -224,12 +224,12 @@ void TVHClient::stopRecording(const QString &uuid)
     reply->setProperty("request", RequestRecordingStop);
 }
 
-QString TVHClient::hostname() const
+const QString &TVHClient::hostname() const
 {
     return m_hostname;
 }
 
-QString TVHClient::password() const
+const QString &TVHClient::password() const
 {
     return m_password;
 }
@@ -249,7 +249,7 @@ quint16 TVHClient::states() const
     return m_states;
 }
 
-QString TVHClient::username() const
+const QString &TVHClient::username() const
 {
     return m_username;
 }
@@ -482,7 +482,13 @@ void TVHClient::updateBaseUrl()
 
 void TVHClient::readSettings()
 {
-    QSettings settings;
+    QString path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/TVHClient/tvhclient.conf";
+
+    if (!QFile(path).exists()) {
+           path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/harbour-tvhclient/harbour-tvhclient.conf";
+    }
+
+    QSettings settings(path, QSettings::NativeFormat);
 
     settings.beginGroup(QStringLiteral("APP"));
     m_hostname = settings.value(Settings::hostname, QString()).toString();
@@ -508,7 +514,7 @@ void TVHClient::readSettings()
 
 void TVHClient::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/TVHClient/tvhclient.conf", QSettings::NativeFormat);
 
     settings.beginGroup(QStringLiteral("APP"));
     settings.setValue(Settings::hostname, m_hostname);

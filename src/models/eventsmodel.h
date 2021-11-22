@@ -35,7 +35,7 @@ public:
     QList<Event *> events() const;
 
     // properties
-    QString channelUuid() const;
+    const QString &channelUuid() const;
 
 signals:
     // properties

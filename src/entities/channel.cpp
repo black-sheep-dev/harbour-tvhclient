@@ -22,12 +22,12 @@ bool Channel::favorite() const
     return m_favorite;
 }
 
-QString Channel::icon() const
+const QString &Channel::icon() const
 {
     return m_icon;
 }
 
-QString Channel::name() const
+const QString &Channel::name() const
 {
     return m_name;
 }
@@ -37,7 +37,7 @@ quint16 Channel::number() const
     return m_number;
 }
 
-QString Channel::uuid() const
+const QString &Channel::uuid() const
 {
     return m_uuid;
 }
@@ -52,27 +52,27 @@ quint8 Channel::currentFeatures() const
     return m_currentFeatures;
 }
 
-QDateTime Channel::currentStart() const
+const QDateTime &Channel::currentStart() const
 {
     return m_currentStart;
 }
 
-QDateTime Channel::currentStop() const
+const QDateTime &Channel::currentStop() const
 {
     return m_currentStop;
 }
 
-QString Channel::currentSubtitle() const
+const QString &Channel::currentSubtitle() const
 {
     return m_currentSubtitle;
 }
 
-QString Channel::currentTitle() const
+const QString &Channel::currentTitle() const
 {
     return m_currentTitle;
 }
 
-QString Channel::nextTitle() const
+const QString &Channel::nextTitle() const
 {
     return m_nextTitle;
 }

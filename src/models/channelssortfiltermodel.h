@@ -13,7 +13,7 @@ class ChannelsSortFilterModel : public QSortFilterProxyModel
 public:
     explicit ChannelsSortFilterModel(QObject *parent = nullptr);
 
-    QString pattern() const;
+    const QString &pattern() const;
     bool showFavoritesOnly() const;
 
 signals:

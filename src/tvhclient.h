@@ -47,7 +47,7 @@ public:
     explicit TVHClient(QObject *parent = nullptr);
     ~TVHClient() override;
 
-    Q_INVOKABLE QString baseUrl() const; 
+    Q_INVOKABLE const QString &baseUrl() const;
     Q_INVOKABLE ChannelsModel *channelsModel();
     Q_INVOKABLE void fetchData();
     Q_INVOKABLE EventsModel *getEventsForChannel(const QString &uuid);
@@ -72,19 +72,17 @@ public:
     Q_INVOKABLE void stopRecording(const QString &uuid);
 
     // properties
-    QString hostname() const;
-    QString password() const;
+    const QString &hostname() const;
+    const QString &password() const;
     quint16 port() const;
     bool showFavoritesOnly() const;
     quint16 states() const;
-    QString username() const;
+    const QString &username() const;
 
 signals:
+    void eventCanceled();
+    void eventScheduled(const QString &uuid);
     void iconAvailable(const QString &uuid);
-
-    // invokables
-    Q_INVOKABLE void eventCanceled();
-    Q_INVOKABLE void eventScheduled(const QString &uuid);
 
     // thread signals
     void requestChannels();

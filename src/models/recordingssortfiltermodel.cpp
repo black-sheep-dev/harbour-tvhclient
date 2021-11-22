@@ -8,7 +8,7 @@ RecordingsSortFilterModel::RecordingsSortFilterModel(QObject *parent) :
     setDynamicSortFilter(true);
 }
 
-QString RecordingsSortFilterModel::pattern() const
+const QString &RecordingsSortFilterModel::pattern() const
 {
     return m_pattern;
 }

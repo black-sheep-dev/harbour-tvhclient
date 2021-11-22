@@ -10,7 +10,7 @@ ChannelsSortFilterModel::ChannelsSortFilterModel(QObject *parent) :
     setDynamicSortFilter(true);
 }
 
-QString ChannelsSortFilterModel::pattern() const
+const QString &ChannelsSortFilterModel::pattern() const
 {
     return m_pattern;
 }

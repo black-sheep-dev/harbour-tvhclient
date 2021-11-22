@@ -13,7 +13,7 @@ class RecordingsSortFilterModel : public QSortFilterProxyModel
 public:
     explicit RecordingsSortFilterModel(QObject *parent = nullptr);
 
-    QString pattern() const;
+    const QString &pattern() const;
     quint8 status() const;
 
 public slots:

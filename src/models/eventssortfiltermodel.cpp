@@ -16,7 +16,7 @@ Event *EventsSortFilterModel::getEvent(int idx)
     return model->getEvent(mapToSource(index(idx, 0)));
 }
 
-QString EventsSortFilterModel::pattern() const
+const QString &EventsSortFilterModel::pattern() const
 {
     return m_pattern;
 }

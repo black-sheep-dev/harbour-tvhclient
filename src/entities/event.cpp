@@ -12,12 +12,12 @@ Event::Event(const EventDTO &dto, QObject *parent) :
     setData(dto);
 }
 
-QString Event::channelUuid() const
+const QString &Event::channelUuid() const
 {
     return m_channelUuid;
 }
 
-QString Event::description() const
+const QString &Event::description() const
 {
     return m_description;
 }
@@ -37,7 +37,7 @@ quint8 Event::features() const
     return m_features;
 }
 
-QString Event::recordingUuid() const
+const QString &Event::recordingUuid() const
 {
     return m_recordingUuid;
 }
@@ -47,27 +47,27 @@ bool Event::scheduled() const
     return m_scheduled;
 }
 
-QDateTime Event::start() const
+const QDateTime &Event::start() const
 {
     return m_start;
 }
 
-QDateTime Event::stop() const
+const QDateTime &Event::stop() const
 {
     return m_stop;
 }
 
-QString Event::subtitle() const
+const QString &Event::subtitle() const
 {
     return m_subtitle;
 }
 
-QString Event::summary() const
+const QString &Event::summary() const
 {
     return m_summary;
 }
 
-QString Event::title() const
+const QString &Event::title() const
 {
     return m_title;
 }

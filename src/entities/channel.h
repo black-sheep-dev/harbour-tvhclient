@@ -49,18 +49,18 @@ public:
     // properties
     bool enabled() const;
     bool favorite() const;
-    QString icon() const;
-    QString name() const;
+    const QString &icon() const;
+    const QString &name() const;
     quint16 number() const;
-    QString uuid() const;
+    const QString &uuid() const;
 
     quint16 currentDuration() const;
     quint8 currentFeatures() const;
-    QDateTime currentStart() const;
-    QDateTime currentStop() const;
-    QString currentSubtitle() const;
-    QString currentTitle() const;
-    QString nextTitle() const;
+    const QDateTime &currentStart() const;
+    const QDateTime &currentStop() const;
+    const QString &currentSubtitle() const;
+    const QString &currentTitle() const;
+    const QString &nextTitle() const;
     bool recording() const;
 
 signals:

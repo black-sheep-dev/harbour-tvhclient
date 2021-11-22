@@ -66,20 +66,20 @@ public:
     // properties
     bool active() const;
     quint32 broadcast() const;
-    QString channelName() const;
-    QString channelUuid() const;
-    QString comment() const;
-    QString description() const;
+    const QString &channelName() const;
+    const QString &channelUuid() const;
+    const QString &comment() const;
+    const QString &description() const;
     quint32 fileSize() const;
     quint32 playCount() const;
     quint32 playPosition() const;
-    QDateTime start() const;
-    QDateTime stop() const;
+    const QDateTime &start() const;
+    const QDateTime &stop() const;
     quint16 status() const;
-    QString subtitle() const;
-    QString title() const;
-    QString url() const;
-    QString uuid() const;
+    const QString &subtitle() const;
+    const QString &title() const;
+    const QString &url() const;
+    const QString &uuid() const;
 
 signals:
     // properties

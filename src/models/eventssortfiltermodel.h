@@ -15,7 +15,7 @@ public:
     explicit EventsSortFilterModel(QObject *parent = nullptr);
 
     Q_INVOKABLE Event *getEvent(int idx);
-    QString pattern() const;
+    const QString &pattern() const;
 
 signals:
 

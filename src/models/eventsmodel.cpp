@@ -29,7 +29,7 @@ QList<Event *> EventsModel::events() const
     return m_events;
 }
 
-QString EventsModel::channelUuid() const
+const QString &EventsModel::channelUuid() const
 {
     return m_channelUuid;
 }
