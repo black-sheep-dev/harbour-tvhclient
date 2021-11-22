@@ -5,7 +5,7 @@
     <name>AboutPage</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O aplikácii</translation>
     </message>
     <message>
         <source>TVH Client</source>
@@ -17,31 +17,31 @@
     </message>
     <message>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdroje</translation>
     </message>
     <message>
         <source>Donations</source>
-        <translation type="unfinished"></translation>
+        <translation>Darovania</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Preklady</translation>
     </message>
     <message>
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Váš jazyk nie je k dispozícii? Ste vítaní v podpore tohto projektu jeho prekladom na mojom hosťovanom Weblate serveri.</translation>
     </message>
     <message>
         <source>If you like my work why not buy me a beer?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ak sa ti páči moja práca, prečo mi nekúpiš pivo?</translation>
     </message>
     <message>
         <source>Donate with PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation>Sponzorovať cez PayPal</translation>
     </message>
     <message>
         <source>Donate with Liberpay</source>
-        <translation type="unfinished"></translation>
+        <translation>Sponzorovať cez Liberpay</translation>
     </message>
 </context>
 <context>
@@ -72,11 +72,11 @@
     </message>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished"></translation>
+        <translation>Skryť hľadanie</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Hľadať</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -96,7 +96,7 @@
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Skontrolujte internetové pripojenie</translation>
     </message>
     <message>
         <source>Recordings</source>
@@ -151,11 +151,11 @@
     <name>EventsListPage</name>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished"></translation>
+        <translation>Skryť hľadanie</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Hľadať</translation>
     </message>
     <message>
         <source>No events available</source>
@@ -163,7 +163,7 @@
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Skontrolujte internetové pripojenie</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
@@ -182,11 +182,11 @@
     </message>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished"></translation>
+        <translation>Skryť hľadanie</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Hľadať</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnoviť</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -341,7 +341,7 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O aplikácii</translation>
     </message>
     <message>
         <source>Show app informations</source>
