@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>මූලාශ්‍ර</translation>
     </message>
     <message>
         <source>Donations</source>
@@ -121,7 +121,7 @@
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished">පටිගතවීම නවත්වන්න</translation>
+        <translation>පටිගතවීම නවත්වන්න</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
@@ -152,7 +152,7 @@
     <name>EventsListPage</name>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished">සෙවීම සඟවන්න</translation>
+        <translation>සෙවීම සඟවන්න</translation>
     </message>
     <message>
         <source>Search</source>
@@ -164,7 +164,7 @@
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished">ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න</translation>
+        <translation>ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
@@ -195,7 +195,7 @@
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>නැවුම් කරන්න</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -238,7 +238,7 @@
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished">පටිගත කිරීම්</translation>
+        <translation>පටිගත කිරීම්</translation>
     </message>
     <message>
         <source>Failed</source>
@@ -342,7 +342,7 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">පිළිබඳව</translation>
+        <translation>පිළිබඳව</translation>
     </message>
     <message>
         <source>Show app informations</source>
@@ -350,7 +350,7 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">සැකසුම්</translation>
+        <translation>සැකසුම්</translation>
     </message>
     <message>
         <source>Connection</source>
