@@ -1,3 +1,8 @@
+* Mon Nov 22 2021 Black Sheep <blacksheep@nubecula.org> 0.1.6-1
+- Add translations for Swedish / Polish / Sinhalese
+- Migration of settings to new Jolla requirements
+- Code improvements
+
 * Wed Mar 03 2021 Black Sheep <blacksheep@nubecula.org> 0.1.5-1
 - Add translation information with self hosted Weblate server
 

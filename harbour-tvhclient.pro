@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # VERSION
-VERSION = 0.1.5
+VERSION = 0.1.6
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -80,7 +80,10 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-tvhclient-de.ts
+TRANSLATIONS += translations/harbour-tvhclient-de.ts \
+    translations/harbour-tvhclient-pl.ts \
+    translations/harbour-tvhclient-si.ts \
+    translations/harbour-tvhclient-sv.ts
 
 RESOURCES += \
     ressources.qrc
