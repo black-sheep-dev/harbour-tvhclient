@@ -155,7 +155,7 @@
     <name>FavoritesListPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Inställningar</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>Hide search</source>
