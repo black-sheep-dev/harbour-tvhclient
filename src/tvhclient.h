@@ -30,7 +30,6 @@ class TVHClient : public QObject
     Q_PROPERTY(QString hostname READ hostname WRITE setHostname NOTIFY hostnameChanged)
     Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
     Q_PROPERTY(quint16 port READ port WRITE setPort NOTIFY portChanged)
-    Q_PROPERTY(bool showFavoritesOnly READ showFavoritesOnly WRITE setShowFavoritesOnly NOTIFY showFavoritesOnlyChanged)
     Q_PROPERTY(quint16 states READ states WRITE setStates NOTIFY statesChanged)
     Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
 
@@ -47,7 +46,7 @@ public:
     explicit TVHClient(QObject *parent = nullptr);
     ~TVHClient() override;
 
-    Q_INVOKABLE const QString &baseUrl() const;
+    Q_INVOKABLE const QString baseUrl() const;
     Q_INVOKABLE ChannelsModel *channelsModel();
     Q_INVOKABLE void fetchData();
     Q_INVOKABLE EventsModel *getEventsForChannel(const QString &uuid);
@@ -75,7 +74,6 @@ public:
     const QString &hostname() const;
     const QString &password() const;
     quint16 port() const;
-    bool showFavoritesOnly() const;
     quint16 states() const;
     const QString &username() const;
 
@@ -105,7 +103,6 @@ public slots:
     void setHostname(const QString &hostname);
     void setPassword(const QString &password);
     void setPort(quint16 port);
-    void setShowFavoritesOnly(bool showFavoritesOnly); 
     void setStates(quint16 states);
     void setUsername(const QString &username);
 
@@ -154,7 +151,6 @@ private:
     QString m_hostname;
     QString m_password;
     quint16 m_port{9981};
-    bool m_showFavoritesOnly{false};
     quint16 m_states{StateUninitialized};
     QString m_username;
 };

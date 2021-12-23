@@ -79,9 +79,9 @@ TVHClient::~TVHClient()
     m_backgroundThread->wait();
 }
 
-const QString &TVHClient::baseUrl() const
+const QString TVHClient::baseUrl() const
 {
-    return QString("http://%1:%2").arg(m_hostname, QString::number(m_port));
+    return QStringLiteral("%1:%2").arg(m_hostname, QString::number(m_port));
 }
 
 ChannelsModel *TVHClient::channelsModel()
@@ -163,7 +163,7 @@ ServerInfo *TVHClient::serverInfo()
 
 void TVHClient::cancelRecording(const QString &uuid)
 {
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/cancel?uuid=%1").arg(uuid)));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/cancel?uuid=%1").arg(uuid)));
     reply->setProperty("request", RequestRecordingCancel);
 }
 
@@ -171,38 +171,38 @@ void TVHClient::cancelRecording(const QString &uuid)
 void TVHClient::getChannels()
 {
     m_channelsModel->setLoading(true);
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/channel/grid?start=0&limit=999999")));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/channel/grid?start=0&limit=999999")));
     reply->setProperty("request", RequestChannels);
 }
 
 void TVHClient::getEpg()
 {
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/epg/events/grid?start=0&limit=999999")));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/epg/events/grid?start=0&limit=999999")));
     reply->setProperty("request", RequestEpg);
 }
 
 void TVHClient::getEpgNow()
 {
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/epg/events/grid?start=0&limit=999999&mode=now")));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/epg/events/grid?start=0&limit=999999&mode=now")));
     reply->setProperty("request", RequestEpgNow);
 }
 
 void TVHClient::getRecordings()
 {
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/grid?start=0&limit=999999")));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/grid?start=0&limit=999999")));
     reply->setProperty("request", RequestRecordings);
 }
 
 void TVHClient::getServerInfo()
 {
     m_serverInfo->setLoading(true);
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/serverinfo")));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/serverinfo")));
     reply->setProperty("request", RequestServerInfo);
 }
 
 void TVHClient::recordEvent(const QString &uuid, quint32 eventId)
 {
-    QNetworkReply *reply =
+    auto reply =
             m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/create_by_event"
                                                      "?config_uuid=%1"
                                                      "&event_id=%2"
@@ -214,13 +214,13 @@ void TVHClient::recordEvent(const QString &uuid, quint32 eventId)
 
 void TVHClient::removeRecording(const QString &uuid)
 {
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/remove?uuid=%1").arg(uuid)));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/remove?uuid=%1").arg(uuid)));
     reply->setProperty("request", RequestRecordingRemove);
 }
 
 void TVHClient::stopRecording(const QString &uuid)
 {
-    QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/stop?uuid=%1").arg(uuid)));
+    auto reply = m_manager->get(getRequest(QStringLiteral("/api/dvr/entry/stop?uuid=%1").arg(uuid)));
     reply->setProperty("request", RequestRecordingStop);
 }
 
@@ -237,11 +237,6 @@ const QString &TVHClient::password() const
 quint16 TVHClient::port() const
 {
     return m_port;
-}
-
-bool TVHClient::showFavoritesOnly() const
-{
-    return m_showFavoritesOnly;
 }
 
 quint16 TVHClient::states() const
@@ -287,15 +282,6 @@ void TVHClient::setPort(quint16 port)
     emit portChanged(m_port);
 
     updateBaseUrl();
-}
-
-void TVHClient::setShowFavoritesOnly(bool showFavoritesOnly)
-{
-    if (m_showFavoritesOnly == showFavoritesOnly)
-        return;
-
-    m_showFavoritesOnly = showFavoritesOnly;
-    emit showFavoritesOnlyChanged(m_showFavoritesOnly);
 }
 
 void TVHClient::setStates(quint16 states)
@@ -425,7 +411,7 @@ void TVHClient::cacheIcons(const QList<Channel *> &channels)
     connect(this, &TVHClient::iconAvailable, m_channelsModel, &ChannelsModel::onIconAvailable);
 
     for (const auto &channel : channels) {
-        QNetworkReply *reply = m_manager->get(getRequest(QStringLiteral("/") + channel->icon()));
+        auto reply = m_manager->get(getRequest(QStringLiteral("/") + channel->icon()));
         reply->setProperty("channel_uuid", channel->uuid());
         reply->setProperty("request", RequestIcon);
     }
@@ -485,7 +471,7 @@ void TVHClient::readSettings()
     QString path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/TVHClient/tvhclient.conf";
 
     if (!QFile(path).exists()) {
-           path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/harbour-tvhclient/harbour-tvhclient.conf";
+        path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/harbour-tvhclient/harbour-tvhclient.conf";
     }
 
     QSettings settings(path, QSettings::NativeFormat);
@@ -494,7 +480,6 @@ void TVHClient::readSettings()
     m_hostname = settings.value(Settings::hostname, QString()).toString();
     m_port = settings.value(Settings::port, 9981).toInt();
     m_channelsModel->setFavorites(settings.value(Settings::favorites).toStringList());
-    m_showFavoritesOnly = settings.value(Settings::showFavoritesOnly, false).toBool();
 
     // support for older version < 0.1.4
     m_username = settings.value(Settings::username).toString();
@@ -520,7 +505,6 @@ void TVHClient::writeSettings()
     settings.setValue(Settings::hostname, m_hostname);
     settings.setValue(Settings::port, m_port);
     settings.setValue(Settings::favorites, m_channelsModel->favorites());
-    settings.setValue(Settings::showFavoritesOnly, m_showFavoritesOnly);
 
     // support for older version < 0.1.4
     if (settings.allKeys().contains(Settings::username))

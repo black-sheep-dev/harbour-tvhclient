@@ -3,14 +3,10 @@ TVH Client is a native Sailfish OS client app for [TVHeadend](https://tvheadend.
 
 >![](icons/128x128/harbour-tvhclient.png)
 
-## Current state of development
-The development is in alpha state at the moment. Not everythings works perfectly and needs testing.
-At the moment there is no possibility to access the TVHeadend server when authentication is active!
+## Version compatibility
+Starting with Version 0.2.0 the application needs at least SailfishOS 4.2.
+If you use an older version of SailfishOS use app version 0.1.7 instead
 
-## Sailfish OS
-This application is tested with Sailfish OS Versions:
-
-- 3.4.0.24 (Pallas Yllästunturi)
 
 ## Implemented Features
 Here is a list of all implemented features so far. Not all features listed below are finished or error free and are still in active development.

@@ -21,7 +21,7 @@ Page {
 
             Image {
                 id: logo
-                source: "/usr/share/icons/hicolor/512x512/apps/" + Qt.application.name + ".png"
+                source: "/usr/share/icons/hicolor/512x512/apps/harbour-tvhclient.png"
                 smooth: true
                 height: parent.width / 2
                 width: parent.width / 2
@@ -99,12 +99,21 @@ Page {
                         wrapMode: Text.WrapAnywhere
                         font.pixelSize: Theme.fontSizeSmall
 
-                        text: "https://weblate.nubecula.org/projects/" + Qt.application.name
+                        text: "https://weblate.nubecula.org/projects/harbour-tvhclient"
                         color: parent.parent.pressed ? Theme.highlightColor : Theme.primaryColor
 
                     }
                 }
-                onClicked: Qt.openUrlExternally("https://weblate.nubecula.org/projects/" + Qt.application.name)
+                onClicked: Qt.openUrlExternally("https://weblate.nubecula.org/projects/harbour-tvhclient")
+            }
+
+            Image {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
+                height: sourceSize.height * width / sourceSize.width
+                smooth: true
+                fillMode: Image.PreserveAspectFit
+                source: "http://weblate.nubecula.org/widgets/harbour-tvhclient/-/harbour-tvhclient/multi-auto.svg"
             }
 
             SectionHeader{
@@ -134,12 +143,12 @@ Page {
                         wrapMode: Text.WrapAnywhere
                         font.pixelSize: Theme.fontSizeSmall
 
-                        text: "https://github.com/black-sheep-dev/" + Qt.application.name
+                        text: "https://github.com/black-sheep-dev/harbour-tvhclient"
                         color: parent.parent.pressed ? Theme.highlightColor : Theme.primaryColor
 
                     }
                 }
-                onClicked: Qt.openUrlExternally("https://github.com/black-sheep-dev/" + Qt.application.name)
+                onClicked: Qt.openUrlExternally("https://github.com/black-sheep-dev/harbour-tvhclient")
             }
 
             SectionHeader{

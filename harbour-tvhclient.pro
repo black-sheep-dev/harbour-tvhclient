@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # VERSION
-VERSION = 0.1.7
+VERSION = 0.2.0
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -49,9 +49,11 @@ DISTFILES += qml/harbour-tvhclient.qml \
     qml/components/CurrentProgressItem.qml \
     qml/components/TimeInfoItem.qml \
     qml/cover/CoverPage.qml \
+    qml/delegates/ChannelListDelegate.qml \
     qml/pages/ChannelsListPage.qml \
     qml/pages/EventPage.qml \
     qml/pages/EventsListPage.qml \
+    qml/pages/FavoritesListPage.qml \
     qml/pages/RecordingsListPage.qml \
     qml/pages/RecordingsPage.qml \
     qml/pages/SettingsAuthenticationPage.qml \
@@ -104,7 +106,7 @@ HEADERS += \
     src/models/recordingsmodel.h \
     src/models/recordingssortfiltermodel.h \
     src/tools/datacache.h \
-    src/tools/iconprovider.h \
+    src/tools/iconprovider.h \ 
     src/tools/secretwallet.h \
     src/tools/utils.h \
     src/tvhclient.h

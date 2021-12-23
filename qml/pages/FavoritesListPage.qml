@@ -38,7 +38,7 @@ Page {
             width: parent.width
 
             PageHeader {
-                title: qsTr("Channels")
+                title: qsTr("Favorites")
             }
 
             SearchField {
@@ -81,7 +81,7 @@ Page {
             model: ChannelsSortFilterModel {
                 id: channelsSortFilterModel
                 sourceModel: TVHClient.channelsModel()
-                showFavoritesOnly: false
+                showFavoritesOnly: true
             }
 
             delegate: ChannelListDelegate {
@@ -111,8 +111,8 @@ Page {
 
             ViewPlaceholder {
                 enabled: listView.count == 0
-                text: qsTr("No channels available")
-                hintText: qsTr("Check your internet connection")
+                text: qsTr("No favorite channels")
+                hintText: qsTr("Add favorite channels first")
             }
 
             VerticalScrollDecorator {}
@@ -121,15 +121,7 @@ Page {
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            pageStack.pushAttached(Qt.resolvedUrl("FavoritesListPage.qml"))
-
-            if (TVHClient.hostname.length === 0) {
-                TVHClient.channelsModel().active = false
-                pageStack.clear()
-                pageStack.push(Qt.resolvedUrl("WizardStartPage.qml"))
-            } else {
-                if (TVHClient.states === TVHClient.StateUninitialized) TVHClient.fetchData()
-            }
+            pageStack.pushAttached(Qt.resolvedUrl("RecordingsPage.qml"))
         }
     }
     onVisibleChanged: TVHClient.channelsModel().active = visible

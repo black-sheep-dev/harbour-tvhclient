@@ -10,12 +10,20 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setApplicationVersion(APP_VERSION);
-    QCoreApplication::setOrganizationName(QStringLiteral("nubecula.org"));
-    QCoreApplication::setOrganizationDomain(QStringLiteral("nubecula.org"));
+    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    app->setApplicationVersion(APP_VERSION);
+    app->setApplicationName("TVHClient");
+    app->setOrganizationDomain("org.nubecula");
+    app->setOrganizationName("org.nubecula");
 
+    QScopedPointer<QQuickView> v(SailfishApp::createView());
+    v->engine()->addImageProvider(QStringLiteral("channel"), new IconProvider);
 
-    auto uri = "org.nubecula.harbour.tvhclient";
+#ifdef QT_DEBUG
+    #define uri "org.nubecula.harbour.tvhclient"
+#else
+    const auto uri = "org.nubecula.harbour.tvhclient";
+#endif
 
     qmlRegisterType<ChannelsModel>(uri, 1, 0, "ChannelsModel");
     qmlRegisterType<ChannelsSortFilterModel>(uri, 1, 0, "ChannelsSortFilterModel");
@@ -33,15 +41,18 @@ int main(int argc, char *argv[])
                                         "TVHClient",
                                         [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
 
-        //Q_UNUSED(engine)
+        Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
-
-        engine->addImageProvider(QLatin1String("channel"), new IconProvider);
 
         auto client = new TVHClient();
 
         return client;
     });
 
-    return SailfishApp::main(argc, argv);
+
+
+    v->setSource(SailfishApp::pathTo("qml/harbour-tvhclient.qml"));
+    v->show();
+
+    return app->exec();
 }

@@ -1,6 +1,10 @@
 [Desktop Entry]
 Type=Application
-X-Nemo-Application-Type=silica-qt5
 Icon=harbour-tvhclient
-Exec=harbour-tvhclient
-Name=TVH Client
+Exec=sailjail -p harbour-tvhclient.desktop /usr/bin/harbour-tvhclient
+Name=TVHClient
+
+[X-Sailjail]
+OrganizationName=org.nubecula
+ApplicationName=TVHClient
+Permissions=Internet;Audio

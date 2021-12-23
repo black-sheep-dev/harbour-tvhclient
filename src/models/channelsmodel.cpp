@@ -43,7 +43,7 @@ void ChannelsModel::onIconAvailable(const QString &uuid)
     if (!index.isValid())
         return;
 
-    emit dataChanged(index, index);
+    emit dataChanged(index, index, QVector<int>() << UuidRole);
 }
 
 void ChannelsModel::setChannel(const ChannelDTO channel)

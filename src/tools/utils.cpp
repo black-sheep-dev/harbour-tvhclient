@@ -5,7 +5,7 @@
 
 #include "src/api/api_keys.h"
 
-#include "zlib.h"
+#include <zlib.h>
 
 ChannelDTO Utils::channelFromJson(const QJsonObject &obj)
 {
@@ -22,7 +22,7 @@ ChannelDTO Utils::channelFromJson(const QJsonObject &obj)
 QByteArray Utils::gunzip(const QByteArray &data)
 {
     if (data.size() <= 4) {
-        return QByteArray();
+        return data;
     }
 
     QByteArray result;
@@ -41,7 +41,7 @@ QByteArray Utils::gunzip(const QByteArray &data)
 
     ret = inflateInit2(&strm, 15 +  32); // gzip decoding
     if (ret != Z_OK)
-        return QByteArray();
+        return data;
 
     // run inflate()
     do {
@@ -57,7 +57,7 @@ QByteArray Utils::gunzip(const QByteArray &data)
         case Z_DATA_ERROR:
         case Z_MEM_ERROR:
             (void)inflateEnd(&strm);
-            return QByteArray();
+            return data;
         }
 
         result.append(out, CHUNK_SIZE - strm.avail_out);
@@ -71,10 +71,6 @@ QByteArray Utils::gunzip(const QByteArray &data)
 QJsonObject Utils::parseJson(const QByteArray &data)
 {
     QByteArray uncompressed = Utils::gunzip(data);
-
-    if (uncompressed.isEmpty())
-        uncompressed = data;
-
     return QJsonDocument::fromJson(uncompressed).object();
 }
 

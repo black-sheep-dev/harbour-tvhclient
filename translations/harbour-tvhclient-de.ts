@@ -63,14 +63,6 @@
         <translation>Zu Favoriten hinzufügen</translation>
     </message>
     <message>
-        <source>Show all</source>
-        <translation>Zeige Alle</translation>
-    </message>
-    <message>
-        <source>Show favorites</source>
-        <translation>Zeige Favoriten</translation>
-    </message>
-    <message>
         <source>Hide search</source>
         <translation>Verstecke Suche</translation>
     </message>
@@ -87,20 +79,8 @@
         <translation>Abspielen</translation>
     </message>
     <message>
-        <source>No favorite channels</source>
-        <translation>Keine Favoriten Kanäle</translation>
-    </message>
-    <message>
-        <source>Add favorite channels first</source>
-        <translation>Füge erst Kanäle zu den Favoriten hinzu</translation>
-    </message>
-    <message>
         <source>Check your internet connection</source>
         <translation>Überprüfe die Internetverbindung</translation>
-    </message>
-    <message>
-        <source>Recordings</source>
-        <translation>Aufnahmen</translation>
     </message>
 </context>
 <context>
@@ -169,6 +149,45 @@
     <message>
         <source>Scheduled for recording</source>
         <translation>Aufnahme geplant</translation>
+    </message>
+</context>
+<context>
+    <name>FavoritesListPage</name>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Hide search</source>
+        <translation>Verstecke Suche</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Favorites</source>
+        <translation>Favoriten</translation>
+    </message>
+    <message>
+        <source>Remove from favorites</source>
+        <translation>Von Favoriten löschen</translation>
+    </message>
+    <message>
+        <source>Add to favorites</source>
+        <translation>Zu Favoriten hinzufügen</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation>Abspielen</translation>
+    </message>
+    <message>
+        <source>No favorite channels</source>
+        <translation>Keine Favoriten Kanäle</translation>
+    </message>
+    <message>
+        <source>Add favorite channels first</source>
+        <translation>Füge erst Kanäle zu den Favoriten hinzu</translation>
     </message>
 </context>
 <context>

@@ -63,14 +63,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show all</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show favorites</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Hide search</source>
         <translation>Skryť hľadanie</translation>
     </message>
@@ -87,20 +79,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No favorite channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add favorite channels first</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Check your internet connection</source>
         <translation>Skontrolujte internetové pripojenie</translation>
-    </message>
-    <message>
-        <source>Recordings</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -169,6 +149,45 @@
     </message>
     <message>
         <source>Scheduled for recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FavoritesListPage</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide search</source>
+        <translation type="unfinished">Skryť hľadanie</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Hľadať</translation>
+    </message>
+    <message>
+        <source>Favorites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove from favorites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to favorites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No favorite channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add favorite channels first</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

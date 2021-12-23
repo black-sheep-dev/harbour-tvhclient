@@ -63,14 +63,6 @@
         <translation>ප්‍රියතමයන්ට එකතු කරන්න</translation>
     </message>
     <message>
-        <source>Show all</source>
-        <translation>සියල්ල පෙන්වන්න</translation>
-    </message>
-    <message>
-        <source>Show favorites</source>
-        <translation>ප්‍රියතමයන් පෙන්වන්න</translation>
-    </message>
-    <message>
         <source>Hide search</source>
         <translation>සෙවීම සඟවන්න</translation>
     </message>
@@ -87,20 +79,8 @@
         <translation>ධාවනය</translation>
     </message>
     <message>
-        <source>No favorite channels</source>
-        <translation>ප්‍රියතම නාලිකා නොමැත</translation>
-    </message>
-    <message>
-        <source>Add favorite channels first</source>
-        <translation>පළමුව ප්‍රියතම නාලිකා එකතු කරන්න</translation>
-    </message>
-    <message>
         <source>Check your internet connection</source>
         <translation>ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න</translation>
-    </message>
-    <message>
-        <source>Recordings</source>
-        <translation>පටිගත කිරීම්</translation>
     </message>
 </context>
 <context>
@@ -169,6 +149,45 @@
     <message>
         <source>Scheduled for recording</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FavoritesListPage</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">සැකසුම්</translation>
+    </message>
+    <message>
+        <source>Hide search</source>
+        <translation type="unfinished">සෙවීම සඟවන්න</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">සොයන්න</translation>
+    </message>
+    <message>
+        <source>Favorites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove from favorites</source>
+        <translation type="unfinished">ප්‍රියතමයන්ගෙන් ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Add to favorites</source>
+        <translation type="unfinished">ප්‍රියතමයන්ට එකතු කරන්න</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">ධාවනය</translation>
+    </message>
+    <message>
+        <source>No favorite channels</source>
+        <translation type="unfinished">ප්‍රියතම නාලිකා නොමැත</translation>
+    </message>
+    <message>
+        <source>Add favorite channels first</source>
+        <translation type="unfinished">පළමුව ප්‍රියතම නාලිකා එකතු කරන්න</translation>
     </message>
 </context>
 <context>
