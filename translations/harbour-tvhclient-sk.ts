@@ -160,11 +160,11 @@
     </message>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished">Skryť hľadanie</translation>
+        <translation>Skryť hľadanie</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Hľadať</translation>
+        <translation>Hľadať</translation>
     </message>
     <message>
         <source>Favorites</source>
