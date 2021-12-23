@@ -88,23 +88,23 @@ Page {
             delegate: ListItem {
                 id: delegate
 
-                contentHeight: contentColumn.height
+                contentHeight: contentColumn.height + separatorTop.height + Theme.paddingSmall
 
                 menu: ContextMenu {
                     MenuItem {
                         visible: model.status & Recording.StatusCompleted
                         text: qsTr("Delete")
-                        onClicked: remorse.execute(delegate, qsTr("Delete recording"), function() { TVHClient.removeRecording(model.uuid)})
+                        onClicked: delegate.remorseAction(qsTr("Delete recording"), function() { TVHClient.removeRecording(model.uuid)})
                     }
                     MenuItem {
                         visible: model.status & Recording.StatusScheduled
                         text: qsTr("Cancel")
-                        onClicked: remorse.execute(delegate, qsTr("Cancel recording"), function() { TVHClient.cancelRecording(model.uuid)})
+                        onClicked: delegate.remorseAction(qsTr("Cancel recording"), function() { TVHClient.cancelRecording(model.uuid)})
                     }
                     MenuItem {
                         visible: model.status & Recording.StatusRecording
                         text: qsTr("Stop")
-                        onClicked: remorse.execute(delegate, qsTr("Stop recording"), function() { TVHClient.stopRecording(model.uuid)})
+                        onClicked: delegate.remorseAction(qsTr("Stop recording"), function() { TVHClient.stopRecording(model.uuid)})
                     }
                     MenuItem {
                         visible: model.status & Recording.StatusCompleted
@@ -115,10 +115,18 @@ Page {
                     }
                 }
 
-                RemorseItem { id: remorse }
+                Separator {
+                    id: separatorTop
+                    anchors.top: parent.top
+                    visible: index > 0
+                    x: Theme.horizontalPageMargin
+                    width: parent.width - 2*x
+                    color: Theme.primaryColor
+                }
 
                 Column {
                     id: contentColumn
+                    anchors.top: separatorTop.bottom
                     width: parent.width
                     spacing: Theme.paddingSmall
 
@@ -201,13 +209,6 @@ Page {
                         }
 
                     }
-                    Separator {
-                        visible: index < (listView.count - 1)
-                        x: Theme.horizontalPageMargin
-                        width: parent.width - 2*x
-                        color: Theme.primaryColor
-                    }
-
                 }
             }
 

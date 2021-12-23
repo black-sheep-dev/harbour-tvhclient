@@ -19,7 +19,7 @@ constexpr int TVHCLIENT_DATACACHE_DB_VERSION = 1;
 #include <QStandardPaths>
 #include <QVariant>
 
-#include "zlib.h"
+#include "compressor.h"
 
 #include "src/api/api_keys.h"
 #include "src/tools/utils.h"
@@ -148,10 +148,7 @@ void DataCache::updateEpg(const QByteArray data, bool now)
     qDebug() << QStringLiteral("Update EPG events start: ")  << QDateTime::currentDateTime();
 #endif
 
-    QByteArray uncompressed = Utils::gunzip(data);
-
-    if (uncompressed.isEmpty())
-        uncompressed = data;
+    const QByteArray uncompressed = Compressor::gunzip(data);
 
     QJsonParseError error;
 
@@ -271,22 +268,14 @@ void DataCache::resetRecordings()
     query.exec(QStringLiteral("VACCUM"));
 }
 
-void DataCache::updateRecordings(const QByteArray data)
+void DataCache::updateRecordings(const QByteArray &data)
 {
 #ifdef QT_DEBUG
     qDebug() << QStringLiteral("Update recordings start: ")  << QDateTime::currentDateTime();
 #endif
 
-    QJsonParseError error;
 
     const QJsonObject json = Utils::parseJson(data);
-
-    if (error.error) {
-#ifdef QT_DEBUG
-        qDebug() << error.errorString();
-#endif
-        return;
-    }
 
     const QJsonArray entries = json.value(ApiKey::entries).toArray();
 

@@ -67,7 +67,7 @@ Page {
             TVHClient.username = usernameField.text
             TVHClient.password = passwordField.text
 
-            TVHClient.saveAuthentication()
+            TVHClient.saveSettings()
         }
 }
 

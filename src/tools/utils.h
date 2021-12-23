@@ -7,7 +7,6 @@ class Utils
 {
 public:
     static ChannelDTO channelFromJson(const QJsonObject &obj);
-    static QByteArray gunzip(const QByteArray &data);
     static QJsonObject parseJson(const QByteArray &data);
 
 };

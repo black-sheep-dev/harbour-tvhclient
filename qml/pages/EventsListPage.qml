@@ -91,20 +91,23 @@ Page {
             delegate: ListItem {
                 id: delegate
 
-                contentHeight: contentColumn.height
+                contentHeight: contentColumn.height + separatorTop.height + Theme.paddingSmall
 
-                RemorseItem { id: remorse }
+                Separator {
+                    id: separatorTop
+                    anchors.top: parent.top
+                    visible: index > 0 && start.getDate() === stop.getDate()
+                    x: Theme.horizontalPageMargin
+                    width: parent.width - 2*x
+                    color: Theme.primaryColor
+                }
 
                 Column {
                     id: contentColumn
+                    anchors.top: separatorTop.bottom
+                    anchors.topMargin: Theme.paddingSmall
                     width: parent.width
                     spacing: Theme.paddingSmall
-
-                    Item {
-                        visible: index > 0
-                        width: 1
-                        height: 1
-                    }
 
                     Label {
                         visible: index === 0 || start.getDate() !== stop.getDate()
@@ -122,13 +125,6 @@ Page {
                             else
                                 model.stop.toLocaleDateString(Qt.locale())
                         }
-                    }
-
-                    Separator {
-                        visible: index > 0 && start.getDate() === stop.getDate()
-                        x: Theme.horizontalPageMargin
-                        width: parent.width - 2*x
-                        color: Theme.primaryColor
                     }
 
                     Label {
@@ -198,7 +194,14 @@ Page {
                             return sub
                         }
                     }
+
+                    Item {
+                        width: 1
+                        height: Theme.paddingSmall
+                    }
                 }
+
+
                 onClicked: pageStack.push(Qt.resolvedUrl("EventPage.qml"), { event: eventsSortFilterModel.getEvent(index) })
             }
 
@@ -211,6 +214,4 @@ Page {
             VerticalScrollDecorator {}
         }
     }
-
-    onVisibleChanged: eventsModel.active = visible
 }

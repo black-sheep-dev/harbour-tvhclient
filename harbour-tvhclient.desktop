@@ -2,7 +2,7 @@
 Type=Application
 Icon=harbour-tvhclient
 Exec=sailjail -p harbour-tvhclient.desktop /usr/bin/harbour-tvhclient
-Name=TVHClient
+Name=TVH Client
 
 [X-Sailjail]
 OrganizationName=org.nubecula

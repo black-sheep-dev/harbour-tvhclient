@@ -39,7 +39,7 @@ public slots:
     // recordings
     void getRecordings();
     void resetRecordings();
-    void updateRecordings(const QByteArray data);
+    void updateRecordings(const QByteArray &data);
 
 private:
     void cleanupEpg();

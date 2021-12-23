@@ -18,12 +18,16 @@
 #include "api/api_keys.h"
 #include "tools/utils.h"
 
+#include "crypto.h"
+
 const QString Settings::hostname                = QStringLiteral("hostname");
 const QString Settings::favorites               = QStringLiteral("favorites");
 const QString Settings::password                = QStringLiteral("password");
 const QString Settings::port                    = QStringLiteral("port");
 const QString Settings::showFavoritesOnly       = QStringLiteral("showFavoritesOnly");
 const QString Settings::username                = QStringLiteral("username");
+
+constexpr quint16 DEFAULT_PORT = 9981;
 
 TVHClient::TVHClient(QObject *parent) :
     QObject(parent),
@@ -127,7 +131,7 @@ void TVHClient::resetAuthentication()
 {
     setUsername(QString());
     setPassword(QString());
-    m_wallet->removeCollection();
+    saveSettings();
 }
 
 void TVHClient::resetCache()
@@ -147,13 +151,6 @@ void TVHClient::resetIconCache()
     }
 
     cacheIcons(m_channelsModel->channels());
-}
-
-void TVHClient::saveAuthentication()
-{
-    m_wallet->removeCollection();
-    m_wallet->storeData(Settings::username, m_username.toUtf8());
-    m_wallet->storeData(Settings::password, m_password.toUtf8());
 }
 
 ServerInfo *TVHClient::serverInfo()
@@ -476,41 +473,30 @@ void TVHClient::readSettings()
 
     QSettings settings(path, QSettings::NativeFormat);
 
-    settings.beginGroup(QStringLiteral("APP"));
+    settings.beginGroup("APP");
     m_hostname = settings.value(Settings::hostname, QString()).toString();
-    m_port = settings.value(Settings::port, 9981).toInt();
+    m_port = settings.value(Settings::port, DEFAULT_PORT).toInt();
     m_channelsModel->setFavorites(settings.value(Settings::favorites).toStringList());
 
-    // support for older version < 0.1.4
-    m_username = settings.value(Settings::username).toString();
-    m_password = settings.value(Settings::password).toString();
+    Crypto crypto(QString(APP_SECRET).toUInt());
+
+    m_username = QString::fromUtf8(crypto.decrypt(QByteArray::fromBase64(settings.value(Settings::username).toString().toUtf8()), true));
+    m_password = QString::fromUtf8(crypto.decrypt(QByteArray::fromBase64(settings.value(Settings::password).toString().toUtf8()), true));
     settings.endGroup();
-
-    if (m_username.isEmpty())
-        m_username = QString::fromUtf8(m_wallet->data(Settings::username));
-    else
-        m_wallet->storeData(Settings::username, m_username.toUtf8());
-
-    if (m_password.isEmpty())
-        m_password = QString::fromUtf8(m_wallet->data(Settings::password));
-    else
-        m_wallet->storeData(Settings::password, m_username.toUtf8());
 }
 
 void TVHClient::writeSettings()
 {
     QSettings settings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/TVHClient/tvhclient.conf", QSettings::NativeFormat);
 
-    settings.beginGroup(QStringLiteral("APP"));
+    settings.beginGroup("APP");
     settings.setValue(Settings::hostname, m_hostname);
     settings.setValue(Settings::port, m_port);
     settings.setValue(Settings::favorites, m_channelsModel->favorites());
 
-    // support for older version < 0.1.4
-    if (settings.allKeys().contains(Settings::username))
-        settings.remove(Settings::username);
+    Crypto crypto(QString(APP_SECRET).toUInt());
+    settings.setValue(Settings::username, QString(crypto.encrypt(m_username.toUtf8(), true).toBase64()));
+    settings.setValue(Settings::password, QString(crypto.encrypt(m_password.toUtf8(), true).toBase64()));
 
-    if (settings.allKeys().contains(Settings::password))
-        settings.remove(Settings::password);
     settings.endGroup();
 }

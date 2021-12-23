@@ -12,7 +12,6 @@
 #include "models/eventsmodel.h"
 #include "models/recordingsmodel.h"
 #include "tools/datacache.h"
-#include "tools/secretwallet.h"
 
 struct Settings {
     static const QString hostname;
@@ -56,7 +55,6 @@ public:
     Q_INVOKABLE void resetAuthentication();
     Q_INVOKABLE void resetCache();
     Q_INVOKABLE void resetIconCache();
-    Q_INVOKABLE void saveAuthentication();
     Q_INVOKABLE ServerInfo *serverInfo();
 
     // API CALLS
@@ -145,7 +143,6 @@ private:
     QNetworkAccessManager *m_manager{new QNetworkAccessManager(this)};
     RecordingsModel *m_recordingsModel{new RecordingsModel(this)};
     ServerInfo *m_serverInfo{new ServerInfo(this)};
-    SecretWallet *m_wallet{new SecretWallet(this)};
 
     // properties
     QString m_hostname;
