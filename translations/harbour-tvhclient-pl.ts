@@ -156,15 +156,15 @@
     <name>FavoritesListPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Ustawienia</translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <source>Hide search</source>
-        <translation type="unfinished">Ukryj wyszukiwanie</translation>
+        <translation>Ukryj wyszukiwanie</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Wyszukaj</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Favorites</source>
