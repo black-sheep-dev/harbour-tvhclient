@@ -465,7 +465,7 @@ void TVHClient::updateBaseUrl()
 
 void TVHClient::readSettings()
 {
-    QString path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/TVHClient/tvhclient.conf";
+    QString path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/tvhclient/tvhclient.conf";
 
     if (!QFile(path).exists()) {
         path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/harbour-tvhclient/harbour-tvhclient.conf";
@@ -487,7 +487,7 @@ void TVHClient::readSettings()
 
 void TVHClient::writeSettings()
 {
-    QSettings settings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/TVHClient/tvhclient.conf", QSettings::NativeFormat);
+    QSettings settings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/org.nubecula/tvhclient/tvhclient.conf", QSettings::NativeFormat);
 
     settings.beginGroup("APP");
     settings.setValue(Settings::hostname, m_hostname);

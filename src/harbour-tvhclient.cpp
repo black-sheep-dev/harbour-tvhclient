@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     app->setApplicationVersion(APP_VERSION);
-    app->setApplicationName("TVHClient");
+    app->setApplicationName("tvhclient");
     app->setOrganizationDomain("org.nubecula");
     app->setOrganizationName("org.nubecula");
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
 
-        auto client = new TVHClient();
+        auto client = new TVHClient(qApp);
 
         return client;
     });
