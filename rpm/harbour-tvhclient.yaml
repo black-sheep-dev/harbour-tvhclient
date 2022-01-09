@@ -1,6 +1,6 @@
 Name: harbour-tvhclient
 Summary: TVHeadend Client
-Version: 0.2.1
+Version: 0.2.2
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
@@ -13,6 +13,22 @@ Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
   TVH Client is a native Sailfish OS Client for TVHeadend server
+
+  %if "%{?vendor}" == "chum"
+  PackageName: SailHub
+  Type: desktop-application
+  Categories:
+    - Development
+  Custom:
+    Repo: https://github.com/black-sheep-dev/harbour-tvhclient/
+  Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-tvhclient/master/icons/harbour-tvhclient.svg
+  Screenshots:
+    - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot1.png
+    - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot2.png
+    - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot3.png
+  Url:
+    Donation: https://www.paypal.com/paypalme/nubecula/1
+  %endif
 Builder: qmake5
 
 # This section specifies build dependencies that are resolved using pkgconfig.
@@ -23,10 +39,11 @@ PkgConfigBR:
   - Qt5Qml
   - Qt5Quick
   - Qt5Multimedia
+  - keepalive
 
 # Build dependencies without a pkgconfig setup can be listed here
-# PkgBR:
-#   - package-needed-to-build
+PkgBR:
+  - qt5-qttools-linguist
 
 # Runtime dependencies which are not automatically detected
 Requires:

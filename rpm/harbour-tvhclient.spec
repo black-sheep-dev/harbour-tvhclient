@@ -9,7 +9,7 @@ Name:       harbour-tvhclient
 # << macros
 
 Summary:    TVHeadend Client
-Version:    0.2.1
+Version:    0.2.2
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -22,10 +22,28 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Multimedia)
+BuildRequires:  pkgconfig(keepalive)
+BuildRequires:  qt5-qttools-linguist
 BuildRequires:  desktop-file-utils
 
 %description
 TVH Client is a native Sailfish OS Client for TVHeadend server
+
+%if "%{?vendor}" == "chum"
+PackageName: SailHub
+Type: desktop-application
+Categories:
+  - Development
+Custom:
+  Repo: https://github.com/black-sheep-dev/harbour-tvhclient/
+Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-tvhclient/master/icons/harbour-tvhclient.svg
+Screenshots:
+  - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot1.png
+  - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot2.png
+  - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot3.png
+Url:
+  Donation: https://www.paypal.com/paypalme/nubecula/1
+%endif
 
 
 %prep
