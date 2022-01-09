@@ -8,7 +8,8 @@ DEFINES += APP_TARGET=\\\"$$TARGET\\\"
 
 QT += multimedia sql
 
-CONFIG += sailfishapp
+CONFIG += link_pkgconfig sailfishapp
+PKGCONFIG += keepalive
 
 include(secret.pri)
 include(extern/sailfishos-utils/compressor/compressor.pri)

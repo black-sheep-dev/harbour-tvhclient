@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.KeepAlive 1.2
 
 import QtMultimedia 5.6
 
@@ -12,6 +13,8 @@ Page {
     id: page
 
     allowedOrientations: Orientation.All
+
+    DisplayBlanking { id: keepAlive }
 
     SilicaFlickable {
         anchors.fill: parent
@@ -66,6 +69,8 @@ Page {
 
         }
     }
+
+    onStatusChanged: keepAlive.preventBlanking = (status === PageStatus.Active)
 }
 
 
