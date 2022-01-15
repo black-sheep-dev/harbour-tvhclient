@@ -28,8 +28,9 @@ Here is a list of all implemented features so far. Not all features listed below
 ## Translations
 
 - English
-- German  
-  
+- German
+- Hungarian by Szabó G. (1Zgp)
+
 Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server:
 
 [![https://weblate.nubecula.org/engage/harbour-tvhclient/](https://weblate.nubecula.org/widgets/harbour-tvhclient/-/multi-auto.svg)](https://weblate.nubecula.org/engage/harbour-tvhclient/)
