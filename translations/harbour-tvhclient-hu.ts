@@ -89,7 +89,6 @@
         <source>%n min(s) left</source>
         <translation>
             <numerusform>%n perc maradt</numerusform>
-            <numerusform>%n perc maradt</numerusform>
         </translation>
     </message>
 </context>
