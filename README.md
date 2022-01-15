@@ -4,6 +4,8 @@ TVH Client is a native Sailfish OS client app for [TVHeadend](https://tvheadend.
 >![](icons/128x128/harbour-tvhclient.png)
 
 
+[![](https://github.com/black-sheep-dev/harbour-tvhclient/actions/workflows/main.yml/badge.svg)](https://github.com/black-sheep-dev/harbour-tvhclient/actions/workflows/main.yml)
+
 ## Implemented Features
 Here is a list of all implemented features so far. Not all features listed below are finished or error free and are still in active development.
 
