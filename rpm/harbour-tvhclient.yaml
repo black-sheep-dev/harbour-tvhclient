@@ -1,6 +1,6 @@
 Name: harbour-tvhclient
 Summary: TVHeadend Client
-Version: 0.2.2
+Version: 0.2.3
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
@@ -15,12 +15,14 @@ Description: |
   TVH Client is a native Sailfish OS Client for TVHeadend server
 
   %if "%{?vendor}" == "chum"
-  PackageName: SailHub
+  PackageName: TVH Client
   Type: desktop-application
   Categories:
-    - Development
+    - Video
+    - Utility
   Custom:
     Repo: https://github.com/black-sheep-dev/harbour-tvhclient/
+    DescriptionMD: https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/README.md
   Icon: https://raw.githubusercontent.com/black-sheep-dev/harbour-tvhclient/master/icons/harbour-tvhclient.svg
   Screenshots:
     - https://github.com/black-sheep-dev/harbour-tvhclient/raw/master/metadata/screenshot1.png
@@ -39,6 +41,7 @@ PkgConfigBR:
   - Qt5Qml
   - Qt5Quick
   - Qt5Multimedia
+  - Qt5Sql
   - keepalive
 
 # Build dependencies without a pkgconfig setup can be listed here

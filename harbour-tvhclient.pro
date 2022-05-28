@@ -1,5 +1,5 @@
 # VERSION
-VERSION = 0.2.2
+VERSION = 0.2.3
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -11,9 +11,7 @@ QT += multimedia sql
 CONFIG += link_pkgconfig sailfishapp
 PKGCONFIG += keepalive
 
-include(secret.pri)
 include(extern/sailfishos-utils/compressor/compressor.pri)
-include(extern/sailfishos-utils/crypto/crypto.pri)
 
 SOURCES += src/harbour-tvhclient.cpp \
     src/api/api_keys.cpp \
@@ -69,7 +67,8 @@ TRANSLATIONS += translations/harbour-tvhclient-de.ts \
     translations/harbour-tvhclient-si.ts \
     translations/harbour-tvhclient-sv.ts \
     translations/harbour-tvhclient-sk.ts \
-    translations/harbour-tvhclient-fr.ts
+    translations/harbour-tvhclient-fr.ts \
+    translations/harbour-tvhclient-hu.ts
 
 RESOURCES += \
     ressources.qrc

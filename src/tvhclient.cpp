@@ -18,8 +18,6 @@
 #include "api/api_keys.h"
 #include "tools/utils.h"
 
-#include "crypto.h"
-
 const QString Settings::hostname                = QStringLiteral("hostname");
 const QString Settings::favorites               = QStringLiteral("favorites");
 const QString Settings::password                = QStringLiteral("password");
@@ -478,10 +476,8 @@ void TVHClient::readSettings()
     m_port = settings.value(Settings::port, DEFAULT_PORT).toInt();
     m_channelsModel->setFavorites(settings.value(Settings::favorites).toStringList());
 
-    Crypto crypto(QString(APP_SECRET).toUInt());
-
-    m_username = QString::fromUtf8(crypto.decrypt(QByteArray::fromBase64(settings.value(Settings::username).toString().toUtf8()), true));
-    m_password = QString::fromUtf8(crypto.decrypt(QByteArray::fromBase64(settings.value(Settings::password).toString().toUtf8()), true));
+    m_username = settings.value(Settings::username).toString().toUtf8();
+    m_password = settings.value(Settings::password).toString().toUtf8();
     settings.endGroup();
 }
 
@@ -494,9 +490,8 @@ void TVHClient::writeSettings()
     settings.setValue(Settings::port, m_port);
     settings.setValue(Settings::favorites, m_channelsModel->favorites());
 
-    Crypto crypto(QString(APP_SECRET).toUInt());
-    settings.setValue(Settings::username, QString(crypto.encrypt(m_username.toUtf8(), true).toBase64()));
-    settings.setValue(Settings::password, QString(crypto.encrypt(m_password.toUtf8(), true).toBase64()));
+    settings.setValue(Settings::username, m_username);
+    settings.setValue(Settings::password, m_password);
 
     settings.endGroup();
 }
