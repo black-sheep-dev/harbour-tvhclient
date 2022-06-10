@@ -150,7 +150,7 @@ void DataCache::updateEpg(const QByteArray data, bool now)
 
     const QByteArray uncompressed = Compressor::gunzip(data);
 
-    QJsonParseError error;
+    QJsonParseError error{};
 
     const QJsonObject json = QJsonDocument::fromJson(uncompressed, &error).object();
 

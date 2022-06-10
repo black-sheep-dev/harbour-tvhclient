@@ -23,7 +23,12 @@ const QString &EventsSortFilterModel::pattern() const
 
 void EventsSortFilterModel::setPattern(const QString &pattern)
 {
+    if (m_pattern == pattern) {
+        return;
+    }
+
     m_pattern = pattern;
+    emit patternChanged();
     invalidateFilter();
 }
 

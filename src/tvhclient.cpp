@@ -14,6 +14,7 @@
 #include <QNetworkRequest>
 #include <QSettings>
 #include <QStandardPaths>
+#include <QTimer>
 
 #include "api/api_keys.h"
 #include "tools/utils.h"
@@ -69,8 +70,10 @@ TVHClient::TVHClient(QObject *parent) :
     connect(m_recordingsModel, &RecordingsModel::recordingStateChanged, m_channelsModel, &ChannelsModel::setRecordingState);
 
     // get data from cache
-    emit requestChannels();
-    emit requestRecordings();
+    QTimer::singleShot(500, [this]() {
+        emit requestChannels();
+        emit requestRecordings();
+    });
 }
 
 TVHClient::~TVHClient()

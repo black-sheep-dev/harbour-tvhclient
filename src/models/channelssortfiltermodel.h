@@ -7,7 +7,7 @@ class ChannelsSortFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString pattern READ pattern WRITE setPattern)
+    Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
     Q_PROPERTY(bool showFavoritesOnly READ showFavoritesOnly WRITE setShowFavoritesOnly NOTIFY showFavoritesOnlyChanged)
 
 public:
@@ -17,6 +17,7 @@ public:
     bool showFavoritesOnly() const;
 
 signals:
+    void patternChanged();
     void showFavoritesOnlyChanged(bool showFavoritesOnly);
 
 public slots:

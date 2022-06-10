@@ -7,8 +7,8 @@ class RecordingsSortFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString pattern READ pattern WRITE setPattern)
-    Q_PROPERTY(quint8 status READ status WRITE setStatus)
+    Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
+    Q_PROPERTY(quint8 status READ status WRITE setStatus NOTIFY statusChanged)
 
 public:
     explicit RecordingsSortFilterModel(QObject *parent = nullptr);
@@ -19,6 +19,10 @@ public:
 public slots:
     void setPattern(const QString &pattern);
     void setStatus(quint8 status);
+
+signals:
+    void patternChanged();
+    void statusChanged();
 
 private:
     QString m_pattern;

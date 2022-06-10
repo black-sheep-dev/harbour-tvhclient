@@ -9,7 +9,7 @@ class EventsSortFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString pattern READ pattern WRITE setPattern)
+    Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
 
 public:
     explicit EventsSortFilterModel(QObject *parent = nullptr);
@@ -18,6 +18,7 @@ public:
     const QString &pattern() const;
 
 signals:
+    void patternChanged();
 
 public slots:
     void setPattern(const QString &pattern);

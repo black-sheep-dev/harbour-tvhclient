@@ -22,7 +22,11 @@ bool ChannelsSortFilterModel::showFavoritesOnly() const
 
 void ChannelsSortFilterModel::setPattern(const QString &pattern)
 {
+    if (m_pattern == pattern) {
+        return;
+    }
     m_pattern = pattern;
+    emit patternChanged();
     invalidateFilter();
 }
 

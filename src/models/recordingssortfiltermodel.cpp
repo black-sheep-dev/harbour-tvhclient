@@ -20,13 +20,22 @@ quint8 RecordingsSortFilterModel::status() const
 
 void RecordingsSortFilterModel::setPattern(const QString &pattern)
 {
+    if (m_pattern == pattern) {
+        return;
+    }
     m_pattern = pattern;
+    emit patternChanged();
     invalidateFilter();
 }
 
 void RecordingsSortFilterModel::setStatus(quint8 status)
 {
+    if (m_status == status) {
+        return;
+    }
+
     m_status = status;
+    emit statusChanged();
     invalidateFilter();
 }
 
