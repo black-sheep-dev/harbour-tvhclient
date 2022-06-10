@@ -8,6 +8,10 @@ Dialog {
 
     id: dialog
 
+    acceptDestination: Qt.resolvedUrl("ChannelsListPage.qml")
+    acceptDestinationAction: PageStackAction.Replace
+    acceptDestinationReplaceTarget: null
+
     canAccept: info.available
 
     Column {
@@ -64,11 +68,7 @@ Dialog {
         }
     }
 
-    onAccepted: {
-        pageStack.clear()
-        pageStack.push(Qt.resolvedUrl("ChannelsListPage.qml"))
-        TVHClient.saveSettings()
-    }
+    onAccepted: TVHClient.saveSettings()
 
     onStatusChanged: if (status === PageStatus.Activating) TVHClient.getServerInfo()
 }
