@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>TVH Client</source>
-        <translation type="unfinished"></translation>
+        <translation>TVH Klient</translation>
     </message>
     <message>
         <source>TVH Client is a native Sailfish OS Client for TVHeadend server.</source>
@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Översättningar</translation>
     </message>
     <message>
         <source>Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server.</source>
@@ -37,18 +37,18 @@
     </message>
     <message>
         <source>Donate with PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation>Donera med PayPal</translation>
     </message>
     <message>
         <source>Donate with Liberpay</source>
-        <translation type="unfinished"></translation>
+        <translation>Donera med Liberpay</translation>
     </message>
 </context>
 <context>
     <name>ChannelsListPage</name>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanaler</translation>
     </message>
     <message>
         <source>No channels available</source>
@@ -76,20 +76,20 @@
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela</translation>
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollera din internet uppkoppling</translation>
     </message>
 </context>
 <context>
     <name>CurrentProgressItem</name>
     <message numerus="yes">
         <source>%n min(s) left</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>minuter kvar</numerusform>
+            <numerusform>minuter kvar</numerusform>
         </translation>
     </message>
 </context>
@@ -97,15 +97,15 @@
     <name>EventPage</name>
     <message>
         <source>Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Händelser</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppa inspelningen</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Schema för inspelning</translation>
     </message>
     <message>
         <source>Schedule Recording</source>
@@ -136,7 +136,7 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <source>No events available</source>
@@ -163,7 +163,7 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <source>Favorites</source>
@@ -179,7 +179,7 @@
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela</translation>
     </message>
     <message>
         <source>No favorite channels</source>
@@ -194,7 +194,7 @@
     <name>RecordingsListPage</name>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela</translation>
     </message>
     <message>
         <source>No recordings available</source>
@@ -206,7 +206,7 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <source>Delete</source>
