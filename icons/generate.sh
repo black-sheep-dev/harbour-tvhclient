@@ -2,7 +2,7 @@
 
 app="harbour-tvhclient"
 
-sizes=(86 108 128 172 512)
+sizes=(86 108 128 172)
 
 # optimze svg
 scour $app.svg $app-optimized.svg

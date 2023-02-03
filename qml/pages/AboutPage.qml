@@ -21,14 +21,13 @@ Page {
 
             Image {
                 id: logo
-                source: "/usr/share/icons/hicolor/512x512/apps/harbour-tvhclient.png"
+                source: "/usr/share/harbour-tvhclient/icons/harbour-tvhclient.svg"
                 smooth: true
+                sourceSize.width: parent.width / 2
+                sourceSize.height: parent.width / 2
                 height: parent.width / 2
                 width: parent.width / 2
-                sourceSize.height: 512
-                sourceSize.width:  512
                 anchors.horizontalCenter: parent.horizontalCenter
-                opacity: 0.7
             }
 
             Label {
@@ -61,6 +60,78 @@ Page {
                 font.pixelSize: Theme.fontSizeSmall
 
                 text: qsTr("TVH Client is a native Sailfish OS Client for TVHeadend server.")
+            }
+
+            SectionHeader {
+                text: qsTr("Social Media")
+            }
+
+            BackgroundItem {
+                width: parent.width
+                height: Theme.itemSizeMedium
+                contentHeight: Theme.itemSizeMedium
+                Row{
+                    width:parent.width - 2 * x
+                    height: parent.height
+                    x:Theme.horizontalPageMargin
+                    spacing:Theme.paddingLarge
+
+                    Image {
+                        anchors.verticalCenter: parent.vertimastodoncalCenter
+                        width: parent.height * 0.8
+                        height: width
+                        source: "/usr/share/harbour-tvhclient/icons/mastodon.svg"
+                    }
+
+                    Label{
+                        width: parent.width - parent.height - parent.spacing
+                        anchors.verticalCenter: parent.verticalCenter
+                        wrapMode: Text.WrapAnywhere
+                        font.pixelSize: Theme.fontSizeSmall
+
+                        text: "@tvhclient@social.nubecula.org"
+                        color: parent.parent.pressed ? Theme.highlightColor : Theme.primaryColor
+
+                    }
+                }
+                onClicked: {
+                    notification.show(qsTr("Copied to clipboard"))
+                    Clipboard.text = "@tvhclient@social.nubecula.org"
+                }
+            }
+
+            BackgroundItem {
+                width: parent.width
+                height: Theme.itemSizeMedium
+                contentHeight: Theme.itemSizeMedium
+                Row{
+                    width:parent.width - 2 * x
+                    height: parent.height
+                    x:Theme.horizontalPageMargin
+                    spacing:Theme.paddingLarge
+
+                    Image {
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: parent.height * 0.8
+                        height: width
+                        source: "/usr/share/harbour-tvhclient/icons/mastodon.svg"
+                    }
+
+                    Label{
+                        width: parent.width - parent.height - parent.spacing
+                        anchors.verticalCenter: parent.verticalCenter
+                        wrapMode: Text.WrapAnywhere
+                        font.pixelSize: Theme.fontSizeSmall
+
+                        text: "@blacksheep@social.nubecula.org"
+                        color: parent.parent.pressed ? Theme.highlightColor : Theme.primaryColor
+
+                    }
+                }
+                onClicked: {
+                    notification.show(qsTr("Copied to clipboard"))
+                    Clipboard.text = "@blacksheep@social.nubecula.org"
+                }
             }
 
             SectionHeader{
@@ -134,7 +205,7 @@ Page {
                         height: width
                         fillMode: Image.PreserveAspectFit
                         anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:///icons/git"
+                        source: "/usr/share/harbour-tvhclient/icons/github.svg"
                     }
 
                     Label{
@@ -179,7 +250,7 @@ Page {
                         height: width
                         fillMode: Image.PreserveAspectFit
                         anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:///icons/paypal"
+                        source: "/usr/share/harbour-tvhclient/icons/paypal.svg"
                     }
                     Label{
                         width: parent.width - parent.height - parent.spacing
@@ -209,7 +280,7 @@ Page {
                         height: width
                         fillMode: Image.PreserveAspectFit
                         anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:///icons/liberpay"
+                        source: "/usr/share/harbour-tvhclient/icons/liberpay.svg"
                     }
                     Label{
                         width: parent.width - parent.height - parent.spacing

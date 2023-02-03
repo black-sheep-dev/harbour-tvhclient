@@ -21,8 +21,10 @@ Dialog {
 
         Image {
             id: logo
-            source: "/usr/share/icons/hicolor/512x512/apps/" + Qt.application.name + ".png"
+            source: "/usr/share/harbour-tvhclient/icons/harbour-tvheadend.svg"
             smooth: true
+            sourceSize.width: parent.width / 2
+            sourceSize.height: parent.width / 2
             height: parent.width / 2
             width: parent.width / 2
             anchors.horizontalCenter: parent.horizontalCenter

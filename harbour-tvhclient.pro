@@ -58,7 +58,7 @@ DISTFILES += qml/harbour-tvhclient.qml \
     translations/*.ts \
     harbour-tvhclient.desktop
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172 512x512
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
 
@@ -68,7 +68,8 @@ TRANSLATIONS += translations/harbour-tvhclient-de.ts \
     translations/harbour-tvhclient-sv.ts \
     translations/harbour-tvhclient-sk.ts \
     translations/harbour-tvhclient-fr.ts \
-    translations/harbour-tvhclient-hu.ts
+    translations/harbour-tvhclient-hu.ts \
+    translations/harbour-tvhclient-fi.ts
 
 RESOURCES += \
     ressources.qrc
@@ -90,3 +91,8 @@ HEADERS += \
     src/tools/iconprovider.h \ 
     src/tools/utils.h \
     src/tvhclient.h
+
+icons.files = icons/*.svg
+icons.path = $$INSTALL_ROOT/usr/share/harbour-sailhub/icons
+
+INSTALLS += icons
