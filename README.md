@@ -34,6 +34,7 @@ Here is a list of all implemented features so far. Not all features listed below
 - English
 - German
 - Hungarian by Szabó G. (1Zgp)
+- Finish (Kalle Laakso a.k.a Termitebug)
 
 Your language is not available? You are welcome to support this project by translating it on my self hosted Weblate server:
 
@@ -42,6 +43,10 @@ Your language is not available? You are welcome to support this project by trans
 ## Intention of this project
 
 This app is part of my plan to replace all android apps I use with native ones. If they don't exist, I will try to create one.
+
+## Social Media
+
+Follow this project on [Mastodon](https://social.nubecula.org/@tvhclient)
 
 
 ## Donations
