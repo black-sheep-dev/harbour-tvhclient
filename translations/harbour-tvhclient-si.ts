@@ -43,6 +43,14 @@
         <source>Donate with Liberpay</source>
         <translation>ලිබර්පේ සමඟ පරිත්‍යාග කරන්න</translation>
     </message>
+    <message>
+        <source>Social Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChannelsListPage</name>

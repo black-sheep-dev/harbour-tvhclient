@@ -161,7 +161,7 @@ Page {
                         height: width
                         fillMode: Image.PreserveAspectFit
                         anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:///icons/weblate"
+                        source: "/usr/share/harbour-tvhclient/icons/weblate.svg"
                     }
 
                     Label{

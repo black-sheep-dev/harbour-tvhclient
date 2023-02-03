@@ -43,6 +43,14 @@
         <source>Donate with Liberpay</source>
         <translation>Donera med Liberpay</translation>
     </message>
+    <message>
+        <source>Social Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChannelsListPage</name>
@@ -68,7 +76,7 @@
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sök</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -144,11 +152,11 @@
     </message>
     <message>
         <source>Check your internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kontrollera din internet uppkoppling</translation>
     </message>
     <message>
         <source>Scheduled for recording</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Schema för inspelning</translation>
     </message>
 </context>
 <context>
@@ -234,7 +242,7 @@
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stoppa inspelningen</translation>
     </message>
 </context>
 <context>

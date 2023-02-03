@@ -18,7 +18,7 @@ QImage IconProvider::requestImage(const QString &id, QSize *size, const QSize &r
     QImage img(path + id + ".png");
 
     if (img.isNull())
-        return QImage(":/icons/channel");
+        return QImage("/usr/share/harbour-tvhclient/icons/channel.svg");
 
     return img;
 }

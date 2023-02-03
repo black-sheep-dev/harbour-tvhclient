@@ -1,5 +1,5 @@
 # VERSION
-VERSION = 0.3.1
+VERSION = 0.3.2
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The name of your application
@@ -71,9 +71,6 @@ TRANSLATIONS += translations/harbour-tvhclient-de.ts \
     translations/harbour-tvhclient-hu.ts \
     translations/harbour-tvhclient-fi.ts
 
-RESOURCES += \
-    ressources.qrc
-
 HEADERS += \
     src/api/api_keys.h \
     src/entities/channel.h \
@@ -93,6 +90,6 @@ HEADERS += \
     src/tvhclient.h
 
 icons.files = icons/*.svg
-icons.path = $$INSTALL_ROOT/usr/share/harbour-sailhub/icons
+icons.path = $$INSTALL_ROOT/usr/share/harbour-tvhclient/icons
 
 INSTALLS += icons

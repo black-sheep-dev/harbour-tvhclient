@@ -43,6 +43,14 @@
         <source>Donate with Liberpay</source>
         <translation>Sponzorovať cez Liberpay</translation>
     </message>
+    <message>
+        <source>Social Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChannelsListPage</name>
